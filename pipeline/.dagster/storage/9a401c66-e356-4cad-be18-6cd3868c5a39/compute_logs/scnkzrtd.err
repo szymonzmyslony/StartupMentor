@@ -1,0 +1,7 @@
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - 25846 - LOGS_CAPTURED - Started capturing logs in process (pid: 25846).
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - 25846 - manual_articles - STEP_START - Started execution of step "manual_articles".
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - 25846 - manual_articles - STEP_OUTPUT - Yielded output "result" of type "[Any]". (Type check passed).
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - manual_articles - Writing file at: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/manual_articles using PickledObjectFilesystemIOManager...
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - 25846 - manual_articles - ASSET_MATERIALIZATION - Materialized value manual_articles.
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - 25846 - manual_articles - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2024-02-04 22:36:05 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 9a401c66-e356-4cad-be18-6cd3868c5a39 - 25846 - manual_articles - STEP_SUCCESS - Finished execution of step "manual_articles" in 40ms.

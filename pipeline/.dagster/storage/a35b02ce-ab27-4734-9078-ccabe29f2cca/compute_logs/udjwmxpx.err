@@ -1,0 +1,1496 @@
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - 57521 - LOGS_CAPTURED - Started capturing logs in process (pid: 57521).
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - 57521 - combined_and_cleaned_docs - STEP_START - Started execution of step "combined_and_cleaned_docs".
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - Loading file from: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/blogs_content using PickledObjectFilesystemIOManager...
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - 57521 - combined_and_cleaned_docs - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step combined_and_cleaned_docs
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - 57521 - combined_and_cleaned_docs - LOADED_INPUT - Loaded input "blogs_content" using input manager "io_manager"
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - 57521 - combined_and_cleaned_docs - STEP_INPUT - Got input "blogs_content" of type "Any". (Type check passed).
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/8f-how-to-spin-your-scientific-research-out-of-a-university-and-into-a-startup
+[32m2024-01-31 14:18:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - This is advice for people who have done scientific research at a university and are considering starting a company to
+commercialize it.
+
+At YC, we've funded more than 75 companies in this situation. We also recently went on a [Bio
+Tour](https://blog.ycombinator.com/yc-bio-tour-2020/) where we went around to research universities and talked with
+hundreds of students and professors in the life sciences about commercializing their research. These are the most common
+topics founders have asked us about.
+
+## Deciding who should spin out
+
+In a typical spin-out situation, there are several people who worked on the research, including a mix of students, post
+docs and faculty. The first thing you need to decide is who is going to work on the company and who is going to stay at
+the university.
+
+A lot of scientific founders have misconceptions about how to structure their founding team. Here are the most common
+ones.
+
+*Misconception 1. You can start a company while continuing your academic career*
+
+Here is a blunt fact that often makes founders uncomfortable: your company has little chance of success unless someone
+who worked on the original research is willing to leave their university role to start this company.
+
+If you are a student graduating soon, you can just wait until you graduate; that’s a perfect time to start a company.
+But otherwise, at some point you will have to make an intentional decision to leave so you can run the company.
+
+*Misconception 2. You should find a CEO to run the company*
+
+Too many scientists believe that they should remain in academia and find a CEO to start a company around their
+invention. This is almost always a bad idea. For one, it’s hard to find a great CEO to run a company at this early
+stage. Truly great CEOs are scarce, and they usually have much better opportunities available to them than running an
+idea-stage startup with no funding. As a result, most scientists that try this approach either never find a CEO or end
+up settling for a mediocre one. It’s even worse if your university tries to find a CEO for you.
+
+But even if you could draft any person in the world to run your company, it still probably wouldn’t be a good idea. The
+best CEO for this stage is one of the people who did the original research. The people who did the original research
+will be far more invested in the success of the venture than any outsider. They are also far more qualified to build a
+company around it because their domain knowledge of the field is much more valuable than whatever general business
+skills an outside CEO would bring.
+
+A related misconception is believing that the research is done and that all that’s left is to commercialize it. If this
+were true, perhaps an outside CEO would make sense. However, it rarely works out that way. Usually you find that the
+thing the market wants is not quite the thing that you’ve invented, and that more research needs to be done. The
+original inventors can take this feedback and make adjustments; an outside CEO will just be stuck.
+
+*Misconception 3. You need someone with business experience on the founding team*
+
+Many scientists think that to start a company you need someone with prior business and financial experience. This is
+just not the case. In the first couple of years, there is typically very little "business" to be done, and whatever
+business skills you need you will pick up along the way. Most of the scientists we fund at Y Combinator have no prior
+experience in business.
+
+People who work in business like to make it sound hard, as if business were like quantum physics, a field that needed to
+be studied for years to master. The fact is, it's not even close.
+
+*Misconception 4: You should raise money first, then leave the university*
+
+Often, people are unsure of whether they want to risk leaving a stable academic role to pursue a startup. So they take
+their idea and pitch it to some local VC firms. They figure if it's a good idea, the VC firms will fund them, validating
+the idea and giving them a smooth transition out of their university job and into a well-funded company.
+
+While VC firms will occasionally fund spin-outs this way, usually they don't. Unfortunately, too many founders get
+turned down by VCs and conclude that their idea must be bad and give up. Actually, the issue is that it's just too early
+at this point to raise money from VCs.
+
+Typically, founders will need to work full-time on their company for 1+ years before it is ready to raise a
+multi-million dollar round from VCs. In the meantime, they sustain themselves by self-funding from their savings,
+getting government research grants, raising a small amount from friends and family, or raising a small "pre-seed" round
+from angel investors, accelerators, or seed funds.
+
+Founders who won't quit their job before they raise money often get stuck in a catch-22. They are waiting for an
+investor to take a bet on them before they quit their job. But the investors are waiting for the founders to believe
+enough in their own company to quit their job\!
+
+*What I recommend*
+
+The ideal situation is that two or more people from the lab who did the work leave together to start the company as
+cofounders. One full-time founder is also ok. One of the people who leave to start the company should be the CEO.
+
+In many cases, other people who were involved in the research want to remain behind at the university but still
+contribute in some way. That’s fine. Those are often called “academic cofounders” or “scientific cofounders” and they
+can still be very helpful. But the founders who are going to be full-time are the most important.
+
+## Deciding when to spin out
+
+In the early stages of developing a new technology, you’ll make faster progress still at the university, taking
+advantage of university resources. It’s the ideal place to do the initial experiments to prove that your idea could
+work. You can even do some testing of market demand for a new product, through programs like NSF I-Corps or just by
+calling up potential customers/stakeholders. At some point, though, that will flip, and being at a university will start
+to slow you down, because universities are not set up to commercialize technologies.
+
+It’s possible to leave too early and possible to wait too long before leaving. Unquestionably, though, the far more
+common mistake is to wait too long.
+
+Most founders wait too long because leaving is scary. Academia is a comforting environment. No one is pressuring you to
+leave and leaving seems risky so the natural thing to do is to keep delaying it. There's a temptation to make the
+technology perfect before spinning out, and there's always "one more experiment" you could do. If you don't stop this
+cycle, you'll never leave.
+
+Often after people do leave, they realize that a lot of the work they did in the last year was wasted, because some of
+their assumptions about what the market wanted were wrong. They also realize that they are now moving so much faster as
+a company that they could have saved months of time by spinning out a year earlier.
+
+## Splitting up Equity
+
+After you've decided who is going to be full-time on the startup and what everyone's role will be, you'll want to split
+up equity.
+
+As important as this decision is, founders often don't have a good framework for making it. Here is the framework I
+recommend. It has just two rules<sup id="footnoteid1"><a href="#footnote1">1</a></sup>.
+
+1)  Founders who will be working on the company full-time should get equal or nearly equal amounts of equity.
+
+2)  Founders who will be leaving their job to work on the company full-time should get much more equity than founders
+    who are going to remain in academia. Academic cofounders should typically own no more than 10% unless they are going
+    to continue to be hands-on<sup id="footnoteid2"><a href="#footnote2">2</a></sup>.
+
+My colleague Michael Seibel previously wrote a [great
+essay](https://www.ycombinator.com/library/5x-how-to-split-equity-among-co-founders) about why rule \#1 is so important.
+Rule \#2 is important because it is the full-time founders who will invest years of their life exclusively in making the
+company successful, and they need to have enough ownership that it makes sense for them to do that.
+
+The biggest conceptual mistake I see scientific founding teams make here is that they think the purpose of allocating
+equity is to reward past contributions, when actually it’s mainly to anticipate future ones.
+
+Here's a blunt fact about starting a company. If you are going to make a new company successful, you will probably have
+to work on it for 7-10 years post spin-out. That's a long time\!
+
+If you are just spinning out of a university now, you might feel like you're halfway done, but actually you are on
+mile 2 of a 26 mile marathon. The academic founders may have been instrumental in the first mile, but it is the
+full-time founders who will be primarily taking you the other 25. The equity split between founders has to reflect the
+expected contributions over the whole marathon.
+
+One consequence of this is that your equity split in the new company will not necessarily have any relation to your
+seniority within the original academic team. It’s often the case that the people leaving are more junior, while the
+senior people / faculty remain. In that case, the founders who leave will end up with much more equity than their former
+boss. This can be an awkward conversation, but it’s entirely sensible.
+
+## Negotiating with tech transfer offices
+
+If you are going to commercialize research started at a university, you will probably need to negotiate the rights to
+the intellectual property. The group at a university that does that is the technology transfer
+office.<sup id="footnoteid3"><a href="#footnote3">3</a></sup>
+
+In the past, tech transfer offices had a well-deserved bad reputation. They were known for being slow and bureaucratic,
+and for forcing onerous terms onto fragile young startups. Many times the terms they insisted on strangled the very
+companies they were trying to create. There was so little transparency in the industry, it was hard for founders to know
+what terms were fair.
+
+Fortunately, things have gotten better. There is now much more information available for founders. Tech transfer groups
+at the universities in major startup hubs like Harvard, MIT and Stanford now give startups reasonable terms (though they
+still take too long to do it). At universities that have not seen many successful spin-outs, it's hit-or-miss. A few
+universities are now using “[express](https://ctl.cornell.edu/entrepreneurs/fasttrack/) [license
+agreements](https://techtransfercentral.com/2013/10/28/how-five-ttos-are-using-express-licenses-successfully/)”, preset
+agreements that require little to no negotiation; hopefully this will become more common.
+
+There are typically four key terms<sup id="footnoteid4"><a href="#footnote4">4</a></sup> in these agreements.
+
+1)  Equity. Typically the university will get equity in the company. This is ok as long as it is not too much. 3-5% is
+    typical. Above 10% will cause problems.<sup id="footnoteid5"><a href="#footnote5">5</a></sup>,
+    <sup id="footnoteid6"><a href="#footnote6">6</a></sup>
+
+2)  Royalty. This means that you pay a percentage of revenue or profits to the university. If this is too high, it can
+    affect the viability of the company to raise money and operate. Ideally you would make this zero. If you can't do
+    that, try to keep it \< 5%, and to have it terminate after a certain number of years and/or a certain level of
+    payments.
+
+3)  Milestone payments. I.e., "You owe us $250K when the company raises its first $10M", or “You owe us $500K when you
+    reach Phase II clinical trials”. Because cash is scarce in the early days of a startup, you want to keep these as
+    low as possible. You should never need to spend more than a few percent of the money you raise.
+
+4)  Exclusivity. If a license is not exclusive, the university could theoretically turn around and license the same IP
+    to a big company to go compete with you. This sounds like a real problem, but often it’s not. For many inventions,
+    in practice other companies won’t know how to use the IP and won’t value it until you've done years of work further
+    developing it (at which point the university-owned IP isn’t
+    sufficient).<sup id="footnoteid7"><a href="#footnote7">7</a></sup> It may be optimal to have a non-exclusive license
+    initially with an option to make it exclusive later, or a right of first refusal clause.  
+    Here is some advice for negotiating these agreements.
+
+You should get in touch with founders of other companies that have recently negotiated agreements with the same office.
+Find out what terms they got and ask for advice on negotiating strategy. You can also ask investors, lawyers, and
+advisors. You should get as many data points as possible.
+
+If you’re a student or post doc, it’s valuable to have the buy-in of the professor running your lab. Professors have
+sway at universities and will give you leverage over a stubborn tech transfer office. You also want to make sure that
+they don’t have any competing plans to do their own spin-out with the technology. Often by getting them onboard as an
+advisor early, they will be helpful in securing a good deal, and they’ll also give you credibility with investors.
+
+If the agreement feels too onerous, ask yourself if you need it at all. It might be cheaper to recreate something
+similar on the company’s time.<sup id="footnoteid8"><a href="#footnote8">8</a></sup>
+
+More dramatically, you might end up not even using what you’re planning to license, because startups pivot all the time.
+I’ve worked with many companies that fought tooth and nail over their tech transfer agreement, only to find that a year
+later they'd totally changed their approach and abandoned the IP they fought so hard to license\! One way to protect
+against this is to ensure that any royalties are directly tied to the use of the technology.
+
+Consider taking an option to license the IP in the future, rather than negotiating a full license agreement now. An
+option is often much cheaper and simpler to get, and allows you to defer the final negotiation for six to twelve months.
+That also gives you time to see how much you are using the original IP before committing to licensing it.
+
+Beware of well-meaning but bad advice from university entrepreneurship offices. Some entrepreneurship offices at
+universities are great, but unfortunately some are not. Worse, some have their own agendas, like helping local
+investors. Consider whether the people you’re talking to have a track record of many truly successful companies when
+listening to their advice.
+
+Start the conversation with this office as early as possible. This will give you more time to work out an agreement and
+also let you find out the lay of the land.
+
+Don't wait for the agreement to start the company. Getting an agreement can take 6 months or longer. Many investors
+(including YC) will fund companies before they have an agreement in place. The more progress you make on the company,
+the more leverage you have in the negotiation.
+
+## After the spinout
+
+You’ll need to incorporate your company. If you are based in the US (and possibly even if you aren’t), you’ll want to
+incorporate as a Delaware C Corporation, no matter which state you are physically
+in.<sup id="footnoteid9"><a href="#footnote9">9</a></sup>
+
+It may well make sense to continue collaborating with your lab. They may produce new work which you want to license.
+
+In some cases, you may want to continue doing experimental work using university labs. University core facilities are
+commonly available to companies, albeit for higher fees. It’s possible to save a lot of money using university resources
+instead of buying equivalents commercially. That’s fine, as long as it isn’t slowing you down significantly and doesn’t
+create IP issues. Unfortunately there is often a tradeoff between speed and cost.
+
+A big adjustment for founders from academia is internalizing a different incentive structure. In academia, you’re
+rewarded for new discoveries and for publications. In startups, there is zero reward for new discoveries and hardly any
+for publications. In startups, the only thing that you are rewarded for is making tangible progress towards a
+commercially valuable product.
+
+A side effect is that in startups, there is no intrinsic reward for doing something new or difficult. Any time there is
+a shortcut where you can copy or buy something that already exists, you should take it. In startups, you want the “new
+part” of what you are doing to be as small as possible, and everything else to be as boring and low risk as possible.
+
+Another big adjustment is the pace. In startups, you are racing against the clock. If you don’t hit milestones before
+your current funding runs out, your company will run out of money and die. That kind of hard constraint forces focus
+like nothing else. As a result, founders who leave academia to do YC often tell us they got more done in the three month
+YC batch than the prior year.
+
+If that’s made startups sound stressful, they are, if only because so much is at stake. When you’re starting your own
+company, the highs are higher and the lows are lower than any regular job. If you want to learn more about what it feels
+like, there’s a great essay called “[What Startups Are Really Like](http://paulgraham.com/really.html)”.
+
+There has [never been a better time](https://blog.samaltman.com/hard-startups) to start a biotech or hard-tech company.
+There is [far more funding available](#footnoteid9) now than ever before, and a well developed ecosystem to support
+founders at every stage. Today most grad students and postdocs choose between staying in academia and getting a job in
+industry. We think there will increasingly be a third option: to start their own company.
+
+**Thanks**  
+I couldn’t have written this without the help of many YC founders who did spin-outs themselves. Special thanks to Uri
+Lopatin, Birgitt Boschitsch, Aaron Lazarus, Alexis Rovner, Juan Medina, Glenn Markov, John Ramunas, Wesley Wiersen,
+Lindsay Amos, Ravi Pamnani, and Andrew Jajack for reading drafts of this.
+
+## Notes
+
+<b id="footnote1">1.</b> Separately, it’s also very important for all founders to have a [vesting
+schedule](https://stripe.com/atlas/guides/equity) for their shares. It should vest over at least four
+years.[↩](#footnoteid1)  
+<b id="footnote2">2.</b> Being “hands-on” means more than giving advice. It means spending at least 1 day / week doing
+active work for the company - writing grants, being in the lab, going to sales meetings, etc. Their equity vesting
+should be tied to them continuing to take a hands-on role.[↩](#footnoteid2)  
+<b id="footnote3">3.</b> The names vary a little - sometimes it’s called the “office of technology licensing”, or the
+“innovation office”, but I’ll use this term.[↩](#footnoteid3)  
+<b id="footnote4">4.</b> Here are some less critical but still common terms and quick advice for them: (5) patent
+prosecution - you should have control of the patent filing and patent strategy, (6) sublicensing - likely important for
+you to be able to sublicense, (7) funding requirements - try to avoid, (8) upfront and annual fees - ok if relatively
+small, (9) rights to future IP coming out of the same lab - may or may not be worth it, (10) pro rata rights so the
+university can invest to maintain their ownership - acceptable if the university can decide quickly and if it only
+applies to priced rounds, not convertible securities.[↩](#footnoteid4)  
+<b id="footnote5">5.</b> Sometimes the terms call for a “percentage of proceeds from any liquidity event” instead. This
+is worse than equity because it can’t be diluted. So if your university insists on this because they can’t accept
+equity, it should be a very small percentage, about ⅓ of the equivalent equity percentage.[↩](#footnoteid5)  
+<b id="footnote6">6. </b> Another wrinkle is anti-dilution clauses where these equity percentages don’t dilute until
+you’ve raised $xM.[↩](#footnoteid6)  
+<b id="footnote7">7.</b> Related to this, some universities require a “marketing period” where they shop the invention
+around to other potential buyers but usually this is a formality because they rarely get interest.[↩](#footnoteid7)  
+<b id="footnote8">8.</b> Also, if you have a reasonable path to recreating it, that can give you leverage over a tech
+transfer office. If they know you are busily working on recreating it, the value of the license deal goes down every
+day.[↩](#footnoteid8)  
+<b id="footnote9">9.</b> Two easy options for doing this are <http://clerky.com/> and <https://stripe.com/atlas.[↩][7]>
+
+[32m2024-01-31 14:19:53 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/4j-startup-hr-what-s-important
+[32m2024-01-31 14:19:53 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - In the early stages of working on a startup, there is little time to spend on areas other than product development and
+talking to users. However, as you start to hire people and build a team, there are HR fundamentals worth investing in.
+Having basic HR practices in place can help your startup scale quickly and may eliminate unforeseen and often costly
+problems down the road.
+
+## The People Person
+
+Many founders ask me “when is the right time to hire a HR person?”. My recommendation is around 20-30 employees or after
+a Series A round. Bringing on a dedicated HR person earlier than this may make sense for some companies if they intend
+to scale their workforce quickly or for other reasons; for example, a non-exempt workforce that needs managing. (See
+below for more information on “classification.”)
+
+In the absence of dedicated HR, there should be someone on your team acting as your “people person.” This person is not
+a founder and acts as a sounding board or liaison for your team. Having a people person that your team can come to and
+voice their concerns is important. This person should have good judgment, be intuitive, and know when to escalate
+issues. It is not their job to solve HR issues, but rather to receive feedback from your team and keep a pulse on
+cultural issues that may be brewing.
+
+This is not to say employees should not be encouraged to speak with their founder(s), though often employees are not
+comfortable doing so and need another outlet. Providing your team with multiple ways to voice their concerns may help
+you resolve issues faster and promote a culture of transparency and open feedback.
+
+## Hiring
+
+There is little need in the early stages to have a robust hiring regime, however, a few hiring fundamentals can go a
+long way.
+
+First, appointing a person to manage your hiring pipeline and keep candidates moving through each phase of the hiring
+process is a good idea. Your hiring experience provides insight into your company culture and a positive candidate
+experience may be the reason a candidate accepts one offer over another. For those candidates who are unsuccessful,
+closing the loop with them is important and shows that you respect their time and appreciate their interest in your
+company.
+
+Second, create a hiring plan and formulate a set of questions for each interviewer during the onsite. Too often the same
+surface level questions are asked over and over again when there's no internal interview plan. Each interviewer should
+play a role in the hiring process and deep dive into different areas of the candidate assessment for eg. culture fit,
+soft skill assessment, technical assessment, management approach, working style, and communication.
+
+## Classification
+
+In recent years, the classification of personnel has been a hot topic. It is important that your workforce is classified
+correctly. Classification categories include regular full-time, part-time, temporary and seasonal employees that are
+either exempt or non-exempt. Other classification categories include W2 employee versus 1099 contractors and
+consultants. YC company [Gusto](https://gusto.com/) has some helpful information on its Help Center regarding [Employee
+Classification
+Options](https://support.gusto.com/team-management/team-payments/pay-rates/1001671771/Employee-classification-options.htm).
+The CA EDD also has a [worksheet](https://www.edd.ca.gov/pdf_pub_ctr/de38.pdf) to determine if a worker is most likely
+an employee or independent contractor.
+
+Misclassification can be a costly mistake with potential back payment and penalties. Keep in mind that there are
+specific laws for nonexempt workforces pertaining to meal breaks, overtime, and holiday pay that your company must
+adhere to despite the size of your team.
+
+## Payroll & Benefits
+
+Employee benefits are a big overhead expense for startups. In the early stages, you don’t have to offer a full suite of
+employee benefits from day one, though keep in mind that quality benefits are a drawcard for many potential candidates.
+
+TIP: Offer a silver or gold tier base plan with an optional buy-up plan. Often startups pay 100% of premiums for a base
+plan (generally a silver or gold tier plan) and give employees the option to enroll in a higher tier plan, with the
+additional cost of the premium paid by the employee. This approach helps startups anticipate their employer costs while
+giving flexibility to employees.
+
+As for payroll, keep it simple. I’m a big fan of providers such as [Gusto](https://gusto.com/),
+[Zenefits](https://www.zenefits.com/) and [Rippling](https://www.rippling.com/) that administer both payroll and
+benefits in one portal. When assessing payroll and benefit providers, look at the amount of backend administration
+needed, available integrations such as 401(k), Flexible Spending Accounts and bookkeeping services, and the tools
+available to employees such as dashboards, calculators and online support.
+
+## Company Handbook
+
+A company handbook outlines the policies and procedures that govern your company. It outlines policies such as paid sick
+leave, paid time off, parental leave and other state and federal mandated laws. An acknowledgment form is signed by each
+employee, confirming that the employee 1) received the handbook, 2) has read and understands the contents of the
+handbook and 3) will adhere to the policies in the handbook.
+
+TIP: Outside legal firms often provide free company handbook templates to their clients. The template forms the basis
+for your handbook and can be easily customized. YC Company Human Interest has a free [Startup Employee Handbook
+template](https://humaninterest.com/blog/startup-employee-handbook-template/) available on its site and note handbook
+examples from Zappos, Valve and The Motley Fool.
+
+## Onboarding Process
+
+Outlining a clear onboarding process from when a candidate accepts an offer to joining your company will provide a
+positive introduction and get your new employees up and running quickly. Some startups use an “Onboarding Guide” to help
+educate their new employees. An Onboarding Guide outlines all the need-to-know items such as what internal tools the
+team uses, team Slack channels, where to find important information, employee benefits, perks and where to find the
+snacks (always important).
+
+Hub has published [The Ultimate Guide for Onboarding for Lean
+Startups](https://blog.thehub.io/blog/the-ultimate-guide-to-employee-onboarding-for-lean-startups/) including helpful
+tips, tools and a timeline for successful onboarding.
+
+## Terminations
+
+It’s inevitable that you will have people leave your company, whether voluntary or involuntary. It is important to have
+a process for offboarding to ensure the employee that is leaving receives their final paycheck (including all
+reimbursements, commissions, bonuses, etc), company equipment is returned and IP is protected. A separation agreement
+outlines the conditions of the termination and may include a separation amount. It is a good idea to use your legal
+counsel for guidance and ensure your separation agreement is updated according to the specific situation at hand.
+
+Lastly, exit interviews are a good way to get insight into your company culture and areas that need more attention.
+Sometimes the feedback from exit interviews can be good, bad or downright ugly. Despite the type of feedback, having
+data points and examples of positive or negative aspects of your company is a big plus and may help you make important
+changes.
+
+[32m2024-01-31 14:20:31 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/2z-pinduoduo-and-the-rise-of-social-e-commerce
+[32m2024-01-31 14:20:31 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - Across the globe, as the novel coronavirus moves us from communal spaces into the confinement of our homes, our social
+experiences are forced to adapt. Beyond the social networks we already know and use, we are finding new ways to
+integrate social into our online lives. At Y Combinator, we are considering what this might mean for the future of
+e-commerce. For several years, we have had our eye on Pinduoduo as an interesting case study. But now, as China is
+recovering from the impact of COVID-19, Pinduoduo and their social-shopping approach is even better poised to fully
+capture the offline-to-online transition in commerce. The success of Pinduoduo in China suggests there is a huge
+opportunity for social commerce platforms to emerge in other regions.
+
+**But first, a bit of background**
+
+When Pinduoduo launched in 2015, there was little room for a new commerce platform in China. Two major e-commerce
+platforms, JD and Taobao/TMall (sub brands of Alibaba), dominated online commerce in China, much like Amazon dominates
+in the US. During that same year, JD and Taobao generated a combined $433B of gross merchandise
+value.<sup id="footnoteid1"><a href="#footnote1">1</a></sup> And yet, five years later, Pinduoduo is defying
+expectations, skyrocketing from a start-up to
+a 57<sup id="footnoteid2"><a href="#footnote2">2</a></sup>-billion-dollar-company with an active buyer base of 585
+million that generated over $144B of Gross Merchandise Value in the last twelve
+months.<sup id="footnoteid3"><a href="#footnote3">3</a></sup> In 2020, it is China’s second largest e-commerce platform
+on an active user basis only lagging behind Alibaba.
+
+Pinduoduo found room in e-commerce, not as a competitor to search-based websites like JD, but as a new e-commerce
+platform focused on interactive and social shopping experiences online. Social shopping may seem like a new concept, but
+the reality is that in the physical world, shopping is meant to be “interactive and fun” and purchases are regularly
+informed by friends and family. Consider how much harder it feels to purchase a new clothing item without immediate
+feedback from friends. E-commerce platforms like JD, Alibaba, and Amazon don’t account for this. Instead, they optimize
+for efficiency, funnel conversion, and purchase rates. Pinduoduo, on the other hand, has tried to mimic the offline
+shopping experience online by building community via their team purchase model, driving engagement via fun and
+interactive games and rewards, and offering personalized experiences and value via recommendations.
+
+Consumers’ desire for social engagement while shopping is highlighted by sales within categories. Only 29% of
+apparel, 11% of health & personal care, and 3% of food & beverage purchases were expected to happen online in 2020 in
+the US (compared to 55% and 43% of books/music and computers/electronics purchases,
+respectively<sup id="footnoteid4"><a href="#footnote4">4</a></sup>). These numbers reveal a missing element in
+e-commerce. Social shopping is particularly important for categories where consumers seek feedback or recommendations
+from friends. Pinduoduo is one of the first companies to successfully create a social shopping experience online, and
+has accelerated the transition of commerce from offline to online in China.
+
+In our view, Pinduoduo’s rapid success in social commerce will be replicated by others globally, which will continue to
+drive commerce in social-driven categories online. And so, to understand the success of Pinduoduo is to understand the
+future of global e-commerce.
+
+**Creating Community via Team Purchase**
+
+The core of the Pinduoduo experience is team purchase, where buyers form a group in order to receive discounts from
+suppliers. The user experience, as laid out in the graphic below, is as follows: (1) for each item, merchants decide two
+prices – one for individual purchase and one for team purchase. If the user opts for a team purchase, he or she may
+either (2.1) initiate a team purchase, or (2.2) join an existing team purchase. If the user has initiated a team
+purchase, he or she may use social platforms such as WeChat to proactively encourage friends to join their team (3.1) or
+more passively wait for other buyers to join the purchase on the Pinduoduo (Pinduoduo) platform (3.2). A team needs to
+be formed within 24 hours to have the order confirmed. Once a team is formed, the purchase is confirmed and the product
+is shipped within 48 hours.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/PDD-Overview.jpg" alt="" width="1004" height="495" class="alignnone size-full wp-image-1104308" />
+
+Nearly all Pinduoduo transactions are completed using team purchase. In the early days, the size of many groups was
+large (e.g., 10+), but as Pinduoduo has scaled the group size requirements have declined. Team purchase is beneficial to
+both buyers and manufacturers; buyers benefit from better prices for goods they want and sellers benefit from increased
+demand and better visibility of future demand. In addition to driving down prices, team purchase helps solve the “trust
+deficit” of retail in China’s developing cities, where more
+than 80%<sup id="footnoteid5"><a href="#footnote5">5</a></sup>) of retail is unorganized and consumers rely heavily on
+social recommendations to initiate transactions.
+
+Pinduoduo’s team purchase is often compared to Groupon in the US because they both enable a form of group buying. But
+the models are actually very different. First, Pinduoduo deals are designed by sellers, but initiated by consumers
+(i.e., users must create or join a group of a certain size to access a deal) whereas Groupon deals are designed and
+managed by sellers. Second, Pinduoduo’s team purchase is used for everyday goods (e.g., fruits/vegetables, apparel) that
+are valuable to consumers vs. one-off products/experiences that haven’t sold well elsewhere. Third, products on
+Pinduoduo are offered by geographically diverse merchants from across China and increasingly from all over the world.
+This is in contrast to the mostly local sellers that leverage Groupon to drive customers to their stores/locations. This
+results in a much stronger consumer value proposition as users are getting discounts on goods they might need to
+purchase anyway vs. letting sellers dictate discounts by aggregating demand on low-value goods or excess inventory.
+
+To maximize this effect, Pinduoduo launched in the fruits and vegetables category. This was strategic for two
+reasons: 1) incumbents were focused on non-perishable items, so competition was limited and 2) fruits and vegetables are
+lower order value, high frequency goods, which means users had a reason to use Pinduoduo regularly. When potential
+buyers saw a great deal they would forward it to their neighbors and friends via WeChat to create a team of 10+ buyers
+to be able to purchase the product. In return, the group initiator would get produce for free as they helped Pinduoduo
+acquire 10 incremental users. Because team purchase drove organic sharing of the product, Pinduoduo was able to grow its
+user base very quickly. Only one month after launching their first party application in January 2016 (transactions prior
+to this happened via WeChat), Pinduoduo already had over 10 million customers. Only four years later, Pinduoduo has
+grown to 585M active buyers. To compare, Alibaba crossed the 500M active buyer threshold 14-15 years after launching its
+consumer facing marketplace vs. just 4 years for Pinduoduo. The take away for startups is that the team purchase model
+is significant because it enables behaviors associated with offline commerce (e.g., sharing products or ideas with
+friends, browsing a shopping mall with friends) in an online setting. Team Purchase helped Pinduoduo grow quickly and
+create a unique recommendation engine based on users’ social interactions. While Team Purchase may be unique to China
+today, we expect social e-commerce to be global. New commerce platforms that can leverage social relationships will
+accelerate the offline to online transition and if you are able to tap into groups of social relationships vs.
+one-to-one relationship the faster your platforms will scale. PDD has one of the most powerful network effects in the
+world ([Reed’s law](https://en.wikipedia.org/wiki/Reed%27s_law): The value of a group-forming network is proportional to
+number and the ease with which groups form within it. Think Slack, WhatsApp Groups -- they all grew exponentially as
+they could tap into groups of social relationships)
+
+While Team Purchase was the main reason for Pinduoduo’s rapid growth, a significant enabler of Pinduoduo’s virality was
+the widespread use of WeChat as a platform in China. Tencent (WeChat’s owner) is a large investor in Pinduoduo, and as a
+result was happy to let Pinduoduo grow on top of their ecosystem. We think it is highly unlikely that Facebook would
+allow a social commerce application like Pinduoduo to be built on top of Messenger or Instagram in the US. That said,
+messaging is fragmented in the US, so this is not an issue for US-based social e-commerce companies.
+
+Users visit Pinduoduo without any specific intent, much like visiting a real-world shopping mall. In a shopping mall,
+the time that a consumer spends at the mall directly correlates with the amount he or she buys. As such, Pinduoduo has
+gamified the experience to maximize the amount of time a user spends on the app irrespective of whether they make a
+purchase or not. The primary features/experiences that have incentivized sharing and usage are Daily Check-Ins, Price
+Cuts, Card Programs, and Mini Games. Social commerce does not just mean connecting user accounts to Facebook. It means
+investing in creating physical world experiences online -- specifically bringing the fun of shopping offline to online
+platforms. We will walk through how Pinduoduo has implemented this below.
+
+**Daily check-ins**
+
+The daily check-in is a feature, prominently featured in the center of the home page. It encourages daily usage by
+rewarding users with redeemable points each time he or she checks into Pinduoduo. The user experience is laid out in the
+image below. First, the user clicks the yellow icon to administer a check-in. Each time the user checks-in they are
+granted a small amount of money and/or credit. Over many months (and many check-ins), these rewards accumulate. In the
+example below, the user has accumulated 26.6 RMB of rewards. To cash out in the form of a no minimum spend voucher, the
+user has to reach a certain minimum value (i.e., 30 RMB).
+
+The daily check-in is a simple yet brilliant feature that encourages users to engage with Pinduoduo on a daily basis.
+While each check-in does not generate revenue for Pinduoduo, the product experience eventually ties back to commerce
+if/when users redeem their vouchers. This theoretically should yield a higher customer lifetime value for Pinduoduo.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/2.png" alt="" class="alignnone size-full wp-image-1104298" />
+
+**Price Chop**
+
+Price Chop is a feature that allows users to get products for free by sharing a custom link with their friends. The
+feature is outlined in detail below. Once in the Price Chop section of Pinduoduo, the user selects the goods that they
+want for free. Upon selection, a 24 hour timer begins. To get the item for free, the user must share their link with as
+many friends as possible. Every friend that clicks on the link and engages with Pinduoduo (no purchase required) drives
+an incremental discount for the initiator. If you don't reduce the price to 0 within 24 hours you don't get the item for
+free and you have to start all over again\!
+
+The product mimics the experience of “leveling” in a massive online multiplayer game like World of Warcraft whereby it
+becomes harder to level up as you graduate to higher levels. In the case of Pinduoduo, the difficulty is customized
+based on the user (i.e., easier for low-engagement users) and the item (i.e., expensive items are more difficult to
+chop). Additionally, similar to leveling, as you get closer to 0 (i.e., a higher level) each incremental friend that
+engages with your link grants smaller and smaller discounts.
+
+Similar to Daily Check-In, Price Chop encourages users to engage with Pinduoduo, and eventually ties the engagement to
+an order on the commerce platform. But unlike Daily Check-In, Price Chop incentivizes users to share Pinduoduo with
+their social network. So in addition to increasing customer lifetime value, Price Chop also helps Pinduoduo efficiently
+acquire customers via user-user sharing of the product.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/3.png" alt="" class="alignnone size-full wp-image-1104299" />
+
+**Card Program**
+
+Pinduoduo’s card program is designed to encourage users to share the product amongst friends and to save money via
+vouchers/special discounts. Pinduoduo has created several different cards that either (1) encourage certain user
+behaviors or (2) provide utility to a Pinduoduo user. The three most popular cards are the Free Pass Card, the Black
+Brand Card, and the Brand Card.
+
+The Free Pass Card is similar to a loyalty program where users can enjoy a “team purchase discount” without having to
+join a team. Users usually get one Free Pass Card after making two purchases on Pinduoduo.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/4.png" alt="" class="alignnone size-full wp-image-1104300" />
+
+The Brand Black Card encourages users to leave reviews on the platform by offering them a discount on branded products
+in return. Pinduoduo gives users a Brand Black Card after they have posted 2 - 4 reviews on the website. This is
+important as consumers rely on reviews and recommendations from previous buyers when making purchase decisions. The
+Brand Black Card incentivizes a good user behavior that makes the platform better for the entire user base.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/5.png" alt="" class="alignnone size-full wp-image-1104301" />
+
+The Brand Card aims to promote Pinduoduo’s branded products. Consumers get a Brand Card after they have made a purchase
+on Pinduoduo. They can share their brand cards with friends via WeChat, to attract their friends to browse and buy
+branded products from Pinduoduo. It is an effective way to encourage users to buy branded products they would not
+normally buy because the recommendation/card was sent to them by a trusted friend.
+
+This is also important because Pinduoduo has historically been used to primarily buy non-branded products. The Brand
+Card is an effective incentive mechanism to increase Pinduoduo’s branded product market share in China.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/6.png" alt="" class="alignnone size-full wp-image-1104302" />
+
+**Mini Games**
+
+Pinduoduo wants users to engage with the platform as often as possible, and they want the experience to mimic real-world
+shopping. As such, they want users to engage with the app to have fun, even if it does not immediately translate into a
+purchase. Pinduoduo now hosts in-app games to help drive up daily time spent on the platform. The first popular game on
+Pinduoduo was Duo Duo Orchard. Think of Farmville except now the rewards are real physical goods. The game is simple – a
+user creates and nurtures a virtual fruit tree to eventually yield a real box of fruit shipped to his or her address. It
+already has more than 11M DAUs\!
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2020/05/7.png" alt="" class="alignnone size-full wp-image-1104303" />
+
+Though not multiplayer, Orchard has social cooperation aspects that drive up network engagement as well. Once users
+choose a tree to create (e.g., mango, lemon, macadamia nut), they need to nurture the tree with water and fertilizer.
+The more you shop on Pinduoduo the more water droplets you receive to nurture your tree. To encourage more interactions
+with friends, you can also share the water droplets. Team purchases and sharing product links enables users to obtain
+special tools like a water can, decorations for your orchard, or bags of fertilizer, which accelerate the growth of your
+tree. Pinduoduo is expanding its in app game selection. It recently launched DD Bank, a piggy bank game where users
+accumulate exchangeable coins over time.
+
+Games like Duo Duo Orchard and DD Bank are ingenious because progress or “leveling” is tied to behaviors that drive
+financial goals for the company. By encouraging users to play games on Pinduoduo, they are able to create a win-win-win
+situation for merchants, consumers, and themselves. More specifically, merchants see more volume, consumers have fun and
+receive unique discounts, and Pinduoduo generates revenue.
+
+**Creating Value by Offering Personalized Recommendations**
+
+Lastly, unlike search-based platforms, Pinduoduo is highly personalized and recommendation based. This means that users
+visit Pinduoduo without any specific intent, much like visiting a shopping mall in the physical world. Based on
+information such as who a user’s friends are, what their favorite categories are, and which of their friend’s they
+trust, Pinduoduo can make recommendations that are personalized to each user. Pinduoduo is uniquely positioned to do
+this due to user-user sharing of the product caused by Team Purchase. The data aggregated by the platform allows the
+company to optimize what items a user encounters on the app by highlighting (1) products that trusted friends have
+already purchased or recommended and (2) products in a users’ favorite categories. For new customers, the standard
+practice is to show new users different categories (based on what they know about that user and their friends) and see
+how they interact with those categories. This is then used to create your buying persona and helps inform future product
+recommendations.
+
+Beyond offering personalized product recommendations, Pinduoduo also thinks about value-for-money as a personalizable
+concept. Based on a user’s purchase/browsing history, Pinduoduo knows whether a user values high-cost branded clothing
+or low-cost non-branded clothing. Based on a user’s specific buying persona, Pinduoduo will only show you clothing items
+that match your willingness to pay.
+
+**The Future of Global E-Commerce**
+
+There is a huge opportunity for companies to build social into their commerce platforms to take share from transactional
+platforms and expand e-commerce’s overall share of spend. The success of team purchase may be specific to the commercial
+landscape of China, but the insights Pinduoduo has surfaced about social integration in commerce is likely entirely
+universal. Going forward, when building their products, founders should consider the insight that shopping is a social
+activity. Web 1.0 platforms - including Amazon - optimize for efficiency and don’t serve trust-based categories very
+well. We firmly believe that by building sharing use cases and fun experiences that mimic the fun of real-world shopping
+into products, commerce’s offline to online transition will accelerate.
+
+There are large indicators that there is major demand for more sophisticated social commerce in the US marketplace
+already. An obvious example of this is Instagram, which has over one billion users and is now, arguably, one of the
+world’s largest social shopping platforms. Similarly to Pinduoduo, Instagram has fostered a browsing-based feed from
+friends and influencers of things that might interest consumers, often accompanied with links to purchase. The rise of
+the social media influencer economy alone shows that US consumers are ready to fully engage in social online shopping.
+
+In fact, we have already seen a few companies come through Y Combinator who are trying to fill this void.
+[Snackpass](https://www.snackpass.co/), a food app for college campuses, has built social experiences into their
+product. Students can send gifts to each other or hatch virtual pets together by ordering food via the app. These
+interactive experiences encourage increased usage of the company’s product. [Meesho](https://meesho.com/), a reseller
+marketplace in India, lets its customers create microbusinesses by selling products/goods to their friends and family
+via Whatsapp and other messaging channels.
+
+Companies like Amazon will continue to grow in market share, for specific shopping needs. But it is inevitable that
+something will rise to fill the e-commerce-social browsing void in the US market. And the half-hearted attempts some
+retail platforms are making to bridge that gap are not yet cutting it. Social commerce does not just mean connecting
+user accounts to Facebook, it means creating new shopping experiences for buyers and sellers online.
+
+Meanwhile Pinduoduo’s social commerce is only gaining sophistication and market influence. Pinduoduo has already
+aggregated enough consumer insights that they are able to collaborate with and influence manufacturers in China to cater
+to their user base. If there is a gap in the US e-commerce market, it is not just an opportunity to grow domestic online
+retail. As the pandemic drives the worlds' social lives to the Internet, there is an undeniable opportunity for
+companies to build social into their commerce platforms to accelerate the offline to online transition globally.
+
+*Special thanks to the Pinduoduo team and Chloe Gordon for reading and editing multiple drafts of this essay.*
+
+<b id="footnote1">1.</b> 20-F filings, 1USD:7CNY conversion rate [↩](#footnoteid1)  
+<b id="footnote2">2.</b> As of April 30, 2020 [↩](#footnoteid2)  
+<b id="footnote3">3.</b> As of December 31, 2019 [↩](#footnoteid3)  
+<b id="footnote4">4.</b> eMarketer [↩](#footnoteid4)  
+<b id="footnote5">5.</b> YC company data [↩](#footnoteid5)
+
+[32m2024-01-31 14:21:59 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/4m-enterprise-sales-for-hackers
+[32m2024-01-31 14:21:59 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - Many hackers-turned-founders understand that sales is an important and valuable skill, but shy away from doing it out of
+fear and uncertainty.
+
+What if I told you that being a great enterprise salesperson requires the same skill set as being a great hacker? You
+just need to reframe how you think about sales.
+
+Before I get started, I want to point out that this article is focused on early stage companies — those who are still in
+the "wild west" stage of figuring things out and do not yet have an established repeatable sales process and
+organization. That said, I assume you have found product-market fit, or are close to
+it.<sup id="footnoteid1"><a href="#footnote1">1</a></sup>
+
+Hackers are experts at understanding complex systems and bending them to their
+will.<sup id="footnoteid2"><a href="#footnote2">2</a></sup> Large enterprise sales requires the same skill set, but
+applied to a different kind of system.<sup id="footnoteid3"><a href="#footnote3">3</a></sup> Where a computer system is
+a complex network of **hardware and software**, a large enterprise is a complex network of **people and
+processes** — and it can be understood and influenced in the same way. The emergent behavior of a corporation is
+the result of incentives and structured rules amongst its constituent people, much like the output of a computer system
+is the result of structured rules and data flows between pieces of code.
+
+Enterprise sales, then, involves understanding and influencing the components (people) of the system in order to produce
+the desired behavior (buying your product.) Every system (company) is different, and so you need to develop a systematic
+approach to hacking (selling to) them.
+
+This is especially true in the early stages of a startup. A mature company has generally figured out how to hack most of
+the possible systems in its target market and has created scripted processes to make it a rinse-and-repeat sales model.
+To follow the analogy through, in this way you can consider the typical "coin operated" sales person at a mature company
+to be more akin to a [script kiddie](https://en.wikipedia.org/wiki/Script_kiddie) than a hacker.
+
+Usually the more complex the system, the more satisfaction the hacker feels when he or she pwns it. Great news:
+Enterprise sales systems are really complex, and hacking them can be much more difficult than hacking computer systems.
+This is because the components don’t always operate according to structured, rational rules. They are humans with
+emotions, which means you also have to understand their motivations, hopes and fears. If that additional chaos isn’t
+enough, consider that the feedback cycle is much slower when hacking an enterprise vs. hacking a computer system. This
+means you need to be much more methodical in your approach -- brute force is generally not an option -- and you don’t
+have as many chances to make mistakes.
+
+Below I will offer some tips on hacking the enterprise. But first, it’s useful to point out some of the typical objects
+(people) you can expect to encounter in the system and their respective incentives and concerns:
+
+  - **Champion.** A champion is your ally within the target company. He or she will have have deep familiarity with the
+    pain your product solves, and will hope that your product is the solution. When you give your pitch, you will find
+    the champion nodding along and completing your sentences for you.
+    
+    The champion will do everything he or she can to get your product deployed at the company, but their influence
+    depends on their seniority and authority. While line-level champions are great, you also need to find champions who
+    are director-level and above. Champions may become so excited they will want to quit and join your company (it has
+    happened to me multiple times), and in any case, a champion often acts as if they are one of your employees — they
+    are your guy/gal on the inside.
+    
+    These people are gold. Find them early and build strong relationships quickly.
+
+  - **Detractor.** The opposite of a champion is a detractor. For some reason, these folks really don’t want to see your
+    solution deployed at the company. Maybe it threatens their job. Maybe they are already invested in a competing
+    product. Maybe they built the solution that is currently being used. Figure out who these folks are early, and
+    generally try to stay off their radar. You need to rally enough support from champions and other parts of the
+    organization to overpower any detractors.
+
+  - **IT.** There are two types of IT organizations you may run into: The risk avoidant organization that perceives
+    change as threatening and risky for the business, and thus shies away from it, and the forward-thinking IT
+    organization that is programmed for risk taking and embracing change. Unfortunately, the former is a lot more common
+    than the latter at large enterprises, and for this reason it’s usually a good strategy to avoid talking to IT
+    (unless your product’s users are in IT.) It’s usually easier to get a meeting with IT compared to a business unit,
+    but be warned, these meetings can end up leading you astray. Some IT groups don’t actually understand the true needs
+    of the business — I’ve been burned by this in the past, building features that IT have asked for in order to get a
+    deal done only to discover when putting the product in front of actual users that it wasn’t what they wanted.
+    
+    Your strategy should generally be to avoid IT until required to go through security reviews and other approvals, and
+    by this time you should have the business units "pulling" you so strongly that IT can’t slow things down for too
+    long. There are of course exceptions to every rule. I have worked with some phenomenal IT people in the past who
+    ended up being real champions and helping us get deployed across different parts of the business.
+
+  - **Procurement.** If you are lucky enough to convince a decision maker/budget holder to buy your product, you will
+    usually be handed over to procurement to negotiate the deal. Get ready for some pain, because usually these folks
+    are incentivized to get the lowest price possible (though there are always exceptions.) Just make sure you are
+    prepared to "give" them something — once they extract their pound of flesh they will get out of the way. This is one
+    reason why a lot of enterprise software has a ridiculously high "list price", but discounting by 80% or more is
+    standard practice.
+
+  - **Legal.** As you run the gauntlet you will likely encounter legal next. Their weapon of choice is often
+    exhaustion — sending back endless redlines over clauses in the contract that in reality won’t have much impact.
+    Your best strategy here is to decide up front what you really care about and what you are willing to give on.
+    
+    After you’ve done a round or two of redlines, a good strategy is to have a frank and authentic discussion listing
+    out those things that you care about, and give in on the stuff that won’t really make a difference for you. That,
+    combined with strong support from your champion (who should be in the background telling legal to hurry up and get
+    the deal done), will help you close out the negotiation and get a signature.
+
+  - **Finance.** You may not need to interact with finance directly, as they may just talk to procurement, but it’s
+    important to aware of the motivations of the finance team. One thing they are thinking about is the budget and
+    budget cycle. For example, you may find that the finance team prefers to pay more money up front to use up some of
+    this quarter’s budget, rather than to space out payments over time. Also important is whether they have a preference
+    for capex or opex, which will influence whether they prefer to make a lump sum payment for a purchase of software vs
+    paying monthly license fees. This affects your pricing model as well as the structure of your sales team and comp
+    plans.
+
+-----
+
+Now that you have some sense about what the components of the enterprise system look like here are a few tips for
+hacking it:
+
+**Uncover the motivations of every player.**
+
+In the beginning you should devote a lot of time to listening and learning. Map out the people in your target company,
+draw a diagram. Just like a great hacker spends a lot of time poking around, exploring and understanding how a system
+works before attempting to influence it, you need to spend a lot of time really understanding the organization,
+motivations and interactions.
+
+**Build strong relationships with your champion(s).**
+
+When doing a large enterprise deal it will fall through before it closes, maybe more than once. You will need to lean on
+your champions to revive the deal and keep it moving. You need to turn these champions into your friends — you should be
+able to text them any time of night and ask for their help. Your champions are your best entry point into influencing
+the system.
+
+**Hire the right type of sales people.**
+
+Now that you understand what selling to the enterprise is like, you should make sure you hire the right people given the
+stage of your company. Personally I tend to optimize for skills and raw characteristics over experience. An especially
+common problem is hiring the wrong fit for your stage - for example, hiring a "coin operated" script kiddie salesperson
+out of a large company when you really need a hacker. You want people who are comfortable with uncertainty, who can
+learn quickly, and have strong intuitive and intellectual intelligence to understand the system well enough to influence
+it.
+
+**Keep your map front and center.**
+
+You spent time mapping out the system in advance. Now, you must always keep it in mind, especially when strange things
+seem to be happening. Go back and evaluate the different people, their motivations, and their interactions. Figure out
+how to play the system to your advantage, and inject the right messages in the right places. Position your product in
+the right way to the right people at the right time. This is where the art of selling comes into play so I can’t give
+concrete tactical advice here, other than to draw your awareness to the fact that it is where most of the magic happens
+in sales.
+
+**Engage on many fronts.**
+
+It’s a good practice to create pairs of relationships. For example, pair executives at your company with executives at
+the customer, your engineers with their IT and security folks, your product people with their business unit leaders etc.
+That said, always make sure one person (usually the account executive) is overseeing and coordinating all the
+interactions.
+
+**Instrument your process.**
+
+It’s important to instrument your sales process (collecting data and generating reports) in the same way you would use a
+packet sniffer or debugger when hacking. You need to measure your sales process in order to improve it.
+
+**Don’t forget that companies are people too.**
+
+It may seem like one organization selling to another organization. But really, decisions are made by people, and people
+don’t always act rationally. You can use this to your advantage by building the right relationships as described above,
+or it can blindside you and cause a deal to blow up if you don’t have the correct understanding of the people involved
+in the system. Remember that friendships lead to partnerships. Remember also that friendships often transcend the
+employer. By nurturing these relationships they will pay off across multiple companies.
+
+I hope this perspective on enterprise sales encourages more hacker founders to get out there and sell their products
+more effectively.
+
+*Ryan Junee is an entrepreneur, startup advisor, and investor. Currently he is the founder and CEO of industrial
+enterprise collaboration app [Parsable](http://www.parsable.com). Previously, he founded Inporia (W11) and Omnisio
+(W08), which was acquired by Google. Junee holds a BE in Computer Engineering from the University of Sydney, and an MSEE
+in Electrical Engineering from Stanford.*
+
+**Notes** <b id="footnote1">1</b> In this article I’m talking about a very specific phase of the enterprise sales
+cycle — going from a qualified lead to a closed deal. I presume you already have a good product and have found
+product-market fit (or are close.) If this isn’t the case, there has been plenty written online about finding
+product-market fit. I recommend starting
+[here](https://www.amazon.com/Startup-Owners-Manual-Step-Step-ebook/dp/B009UMTMKS/190-7727698-9671318?ie=UTF8&btkr=1&redirect=true&ref_=dp-kindle-redirect).
+This article is also not about prospecting or finding/identifying the right customers -- which is actually where you
+should spend a large amount of your effort, so as not to waste time chasing dead ends.
+
+<b id="footnote2">2</b> “To programmers, 'hacker' connotes mastery in the most literal sense: someone who can make a
+computer do what he wants — whether the computer wants to or not.” — [Paul Graham](http://www.paulgraham.com/gba.html)
+
+<b id="footnote3">3</b> In this article I’m really talking about selling to large enterprise companies: Think
+Fortune 500, high-touch complex sales with with lots of people involved; $1M+ deals. This is often called "elephant
+hunting."
+
+*Thanks to Eugene Levitsky, Ab Belani and Harish Srinivasan for reading drafts of this article.*
+
+[32m2024-01-31 14:23:03 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck
+[32m2024-01-31 14:23:03 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - *The following is an adaption of a presentation I give to YC startups before we have them create their presentation
+slide decks for Demo Day.*
+
+**Here’s how to make a solid Demo Day slide deck. The thing to remember is that you already have everything you need to
+create a great presentation.**
+
+There are probably 100 reasons why your company is great, but people can only really remember a few of them after a
+short presentation or pitch. With each one of you, we sat down and figured out the 5 to 7 most important ideas people
+should know about your startup. These 5 to 7 points are the ones you want investors to remember.
+
+As you experienced for yourselves from <span id='r1'>Prototype Day</span> [1.](#e1), you’ll be lucky if they can
+remember even 1 or 2 of those points in the context of 100 other companies also presenting alongside you.
+
+If you just communicate your points clearly, you’ll do better than 99% of startups. Because before anyone can remember,
+they have to understand. Here’s how I make things easy to understand:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.125.png" alt="ddaytips-125" width="100%" height="100%" class="aligncenter size-full wp-image-1097395" />
+
+  - I make it legible.
+  - I make it simple.
+  - I make it obvious.
+
+Here’s how to get people to **not** understand:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.013.png" alt="ddaytips-013" width="100%" height="100%" class="aligncenter size-full wp-image-1097368" />
+
+  - Making it illegible.
+  - Making it complicated.
+  - Making it subtle.
+
+I’m going to hammer this in with some repetition: Your slides should **NOT** be illegible, complicated, or subtle.
+Slides should be legible, simple, and obvious.
+
+This is when I give a word of warning before moving forward in my presentation. **This presentation has too many damn
+slides.** If this was an actual Demo Day presentation, I’d have stopped a few slides ago. This is a visual essay, which
+is very different. Please don’t make a visual essay.
+
+**Legibility**
+
+Alright, let’s talk about legible slides. If they can’t read it, they won’t be able to understand it. At Demo Day, the
+room will be filled with over 500 people. They can’t all sit in the front row. A good number of them are old-ish people,
+so their eyesight may not be the best.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.022.png" alt="ddaytips-022" width="100%" height="100%" class="aligncenter size-full wp-image-1097369" />
+
+Legible slides are ones that even old people sitting in the back row with bad eyesight can read. Here’s how you do that:
+
+  - Use large type.
+  - Bold text.
+  - A simple font.
+  - With good contrast from the background.
+
+Also, text at the top is easier to read from the back of the room. Let’s run through some examples.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.029.png" alt="ddaytips-029" width="100%" height="100%" class="aligncenter size-full wp-image-1097370" />
+
+This is not exactly terrible. The problem is the contrast and the positioning of the text. Let's try it again.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.031.png" alt="ddaytips-031" width="100%" class="aligncenter size-full wp-image-1097371" />
+
+It's better, but there's lots of other text on this slide that's not optimized for legibility because we've allowed the
+screenshot to be a constraint. Here's a version I know everyone will be able to read from the back of the room.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.033.png" alt="ddaytips-033" width="1920" class="aligncenter size-full wp-image-1097372" />
+
+The following slide comes from [Shred Video](http://shredvideo.com/). It's from their Prototype Day presentation
+(*thanks guys for giving me permission to use this*) and it's the one that's supposed to explain what their startup is
+building.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.034.png" alt="ddaytips-034" width="1920" class="aligncenter size-full wp-image-1097373" />
+
+As you can see (or not see), the text is too small and too skinny. The text that actually explains what they do is also
+at the [bottom of the slide](/images/ddaytips/ddaytips.034.png). Their technology is amazing. Shred's software can
+automatically edit videos from hours of raw footage into something that looks like it was made by a professional in just
+a few seconds. Unfortunately, they've basically hidden it in light gray at the bottom of the slide. By Demo Day, their
+description simplified and the text they used to describe it was large and in charge.
+
+**Simplicity**
+
+Let’s talk about simple slides. Simple ideas are easy to understand.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.038.png" alt="ddaytips-038" width="1920" class="aligncenter size-full wp-image-1097374" />
+
+But what does that exactly mean? Well, simple and complex share the same word origin.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.039.png" alt="ddaytips-039" width="1920" class="aligncenter size-full wp-image-1097375" />
+
+The word ‘plex’ means braid or twist or fold.
+
+Simple ideas are ones that aren’t intertwined with other ideas. They are one fold. They are one idea. A simple slide,
+therefore, expresses one idea. Do not crowd your slides with multiple ideas. That’s how you make it complex. Some ideas
+may take more than one slide to express a point, but you should try hard to do it in one.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.042.png" alt="ddaytips-042" width="1920" class="aligncenter size-full wp-image-1097376" />
+
+Since you only have 5-7 ideas you want to get across to investors, you shouldn’t have too many slides. Demo Day slides
+ideally have only about 5-7 slides.
+
+Let's look at another example from one of our startups. Here’s a very early version of a slide from
+[Afrostream](https://afrostream.tv/) explaining what they do.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.047.png" alt="ddaytips-047" width="1920" class="aligncenter size-full wp-image-1097377" />
+
+They've put two ideas here trying to convey what exactly they've built and who it's for. Unfortunately, there's just too
+much text here. It might have been okay if they had just put the highlighted portions, but they made a very common
+mistake that I see a lot of startups make. They've tried to pack in all the little nuances of their business into this
+slide. The result is a slide that no one can easily remember.
+
+Contrast this with the slide they end up using on Demo Day to explain their startup:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/afrostream-after.jpg" alt="afrostream-after" width="720" class="aligncenter size-full wp-image-1097366" />
+
+Ahhhh, it's like a breath of fresh air. Short, sweet, and easy to recollect. Once you decide what idea you're going to
+try to convey on a slide, you've got to figure out how to make sure your audience finds that idea. The best way to help
+people find the one idea on each slide is to make it obvious.
+
+**Obviousness**
+
+Let’s talk about obvious slides. Obvious slides are ones that can be understood at a glance. Here’s a simple test you
+can use to test if a slide is obvious: Show it to a stranger and ask them to tell you what it means. If they don’t
+**immediately** say your idea, you lose.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.056.png" alt="ddaytips-056" width="1920"  class="aligncenter size-full wp-image-1097379" />
+
+This is because ideas that are obvious are very fast to understand. Why do we care about the speed of understanding?
+Well, for a Demo Day presentation the following two things make it very tricky for you.
+
+1.  You only have 2 minutes and 30 seconds.
+2.  People are easily distracted.
+
+In fact, investors are even more easily distracted than most other people. They are easily distracted because they are
+impatient. If they don’t get your point right away, they will check their email.
+
+We can’t force investors to stare and listen to you the entire time. And to be honest, it’s hard to focus intently on
+over 100 presentations even if it’s your job. Have some empathy\! The way to mitigate this is to make sure any slide you
+show can be immediately understood. That way they’ll just get it when they look up from checking their email.
+
+Here’s how I make things obvious: I start by making it **legible** and **simple**. (See two points above.) Then I try to
+make my idea **explicit**. Here’s an example:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.072.png" alt="ddaytips-072" width="1920"  class="aligncenter size-full wp-image-1097380" />
+
+markdown: That slide isn’t explicit. You can probably guess and figure out it represents some kind of growth graph, but
+it isn’t immediately clear.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.074.png" alt="ddaytips-074" width="1920" class="aligncenter size-full wp-image-1097381" />
+
+This is better, but the idea I want to express could be more in your face.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.076.png" alt="ddaytips-076" width="1920" class="aligncenter size-full wp-image-1097382" />
+
+Boom. It's like I put CliffsNotes right on the slide. No need to guess how my startup is doing, I made it explicit.
+Here’s another variation from one of our startups.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.079.png" alt="ddaytips-079" width="1920" class="aligncenter size-full wp-image-1097384" />
+
+Without the caption, you’d have to study the graph to get to that conclusion. Just writing it out like that means I
+barely have to look at the graph at all.
+
+Another way I make my slides obvious is to avoid distractions in my slides. Now, when I say distractions, I mean
+information distractions. Here’s one way to show how Dropbox works:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.084.png" alt="ddaytips-084" width="1920" class="aligncenter size-full wp-image-1097385" />
+
+Not bad, but not obvious. The problem is people can’t understand that slide immediately. Why? Well, there’s a lot of
+information on that slide. See?
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.087.png" alt="ddaytips-087" width="1920"  class="aligncenter size-full wp-image-1097386" />
+
+All that crap takes time to comprehend. There’s actually a law of human interaction called [Hick's
+Law](https://en.wikipedia.org/wiki/Hick%27s_law) that describes how each piece of information we add to a problem comes
+at a cost–-increasing the number of choices will increase the time it takes to make a decision logarithmically.
+
+To me, diagrams are like little mazes for ideas. It usually makes the path to the idea you want to express too long. And
+you don’t want investors wasting time trying to figure out a diagram. You want investors to just understand
+immediately—immediately why you’re awesome. So the path to the idea should be straight and quick.
+
+Here’s some other distractions you should avoid in your slides.
+
+  - Too much text.
+  - Excessive explanations and caveats.
+  - Excessive branding per slide.
+  - Photos with no titles or captions.
+  - Animations.
+  - Transitions.
+  - Memes.
+  - Subtle humor.
+  - Accidental humor.
+
+Basically, don’t try to make the slides the thing they’ll remember.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.107.png" alt="ddaytips-107" width="1920" class="aligncenter size-full wp-image-1097390" />
+
+Investors invest in teams not slides. Your slides should make **your** ideas more clear. Don’t let your slides distract
+investors from what you’re saying out loud. You want them to be impressed by you. Not your slides.
+
+There is, however, one exception I have for this rule: when your point is to show complexity or to overwhelm the
+audience. This usually happens when a startup wants to talk about how hard a problem is that they're solving. I’ll give
+you an example from [Magic’s](https://getmagicnow.com/) slide deck.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.092.png" alt="ddaytips-092" width="1920" class="aligncenter size-full wp-image-1097388" />
+
+On that slide they make the point that their software abstracts away thousands of services into a single interface. To
+bring the point home, they show a slide of every on demand service they could think of in every industry, market and
+vertical organized on a grid.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.093.png" alt="ddaytips-093" width="1920" class="aligncenter size-full wp-image-1097389" />
+
+Normally, it's not ideal to show a slide of every potential competitor out on the market. The logos, however, represent
+the problem. For users to take advantage of all these services, they'd have to create an account for every single one.
+It's a discovery and usability issue. Each logo also represents every business Magic is now able to charge a premium on
+top of to solve their users' problems. It's overwhelming for a reason and that's usually when it's okay to bend the
+rules.
+
+**Fucking Screenshots**
+
+Let’s talk about screenshots. I usually hate screenshots in Demo Day presentations. Screenshots are almost always
+illegible, complex, and non-obvious. They break all 3 rules\! The text in most interfaces are too small (not legible).
+Most interfaces do multiple things (not simple). Most screenshots take longer than a glance to understand (not obvious).
+They are the worst.
+
+Here is a Google image search for
+[‘screenshots’](https://www.google.com/search?q=screenshots&source=lnms&tbm=isch&sa=X&ved=0CAcQ_AUoAWoVChMIhoqquqadyQIVSfJjCh1diQB8&biw=1204&bih=1356):
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/screenshots.png" alt="screenshots" width="960"  class="aligncenter size-full wp-image-1097396" />
+
+Can you understand any of those images immediately? Nay.
+
+If you’re trying to show what you do, I recommend showing the most simplified version of it. A bulleted list of steps is
+my favorite technique for this.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.118.png" alt="ddaytips-118" width="1920" class="aligncenter size-full wp-image-1097391" />
+
+That slide is far better at explaining the ease of use of [SparkGift's](https://www.sparkgift.com/) product than any
+workflow they could show from their actual interface. Sometimes a company can get lucky and explain what they do in two
+points. Here's how [Meadow](https://getmeadow.com) did it:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.119.png" alt="ddaytips-119" width="1920" class="aligncenter size-full wp-image-1097392" />
+
+In my opinion, this slide is far better than any combination of buttons, links and chrome they could have put up there
+to express the same idea.
+
+The frustration I have for screenshots in pitch decks goes for screencasts and videos as well. Think twice before trying
+to use either one.
+
+Alright, so there’s probably a lot more you can do to improve your slide deck, but this is a pretty good start. Again,
+here’s how to make a solid Demo Day slide deck:
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2016/11/ddaytips.125.png" alt="ddaytips-125" width="1920" class="aligncenter size-full wp-image-1097395" />
+
+Make it legible. - Make it simple. - Make it obvious.
+
+If you just do these three things, you’ll have a presentation that anyone can probably understand. And since
+understanding is the foundation for getting someone excited enough to want to talk to you afterwards, it’s a good place
+to start.
+
+Two weeks into a batch we hold an event called Prototype Day for all the startups to present to one another for the
+first time. What they realize quickly is how bad they are at describing their startups in a way that gets even their
+batchmates to remember. [↪](#r1)
+
+[32m2024-01-31 14:24:18 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/3w-how-to-create-and-manage-a-board
+[32m2024-01-31 14:24:18 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - *With special contributions from Nic Dardenne*
+
+One of the most common questions we hear from founders is “How do I manage my board?” It’s something that provokes
+anxiety, because this is the first time the founder/CEO is subject to external supervision, and the board has powers
+that include the firing of the CEO and the senior management. It is natural to feel this way. So, in this post, I’m
+sharing the collective wisdom of the YC community to help guide founders on best practices in managing a
+board––including running board meetings and overcoming board issues. Where possible, I’ve included specific examples
+- drawn from YC companies and partners - of how companies have handled board issues.
+
+But first, what’s the purpose of a board? The main role of a board is to help guide the company through major decisions,
+such as hiring and firing senior management; approving corporate actions (e.g. compensation, stock options, and budget);
+and offering guidance on strategic decisions that impact the business longer term. As a legal matter, every Delaware
+corporation must have a board once it starts operating. At the start, this consists of the founders and the board
+functions mostly just as the technical body for approving corporate actions that must follow certain formalities (e.g.
+option grants). When people refer to setting up a board, what they usually mean is the process of adding outside
+directors, after the company raises money. These may be investor directors or independent directors.
+
+### A note on board composition
+
+If you need to have a board, who should be on it? Since the answer depends so much on the particular company and
+industry, we won’t spend much time on board composition in this post, but the short answer is that the investors who
+lead your Series A and Series B rounds will typically join the board (later-stage growth stage investors don’t tend to
+ask for board seats).
+
+A smaller company will have 3-5 board seats and a public company board will have 7-9 seats. The composition tends to
+significantly change a few years before going public, beginning with recruiting independent board members. Later, as the
+company grows, specific topical expertise committees (e.g., audit and compensation) will also be formed.
+
+But in terms of how to pick the *right* board members - for an early stage company - the \#1 attribute you need is
+trust. And the only way you build trust is with time. We recommend getting to know partners at VC firms on your list at
+least 6 to 9 months before your fundraise. Mathilde Colin, the CEO of Front, shares her experience doing this
+[here](https://medium.com/@collinmathilde/front-series-a-deck-f2e2775a419b).
+
+Before you add new board members, you should have a sense of their strengths, their weaknesses, and whether you would
+want to work with them for 10+ years––that’s how long some of these boards may last, given the median time to IPO. So,
+how do you get to know who these people really are beyond spending time with them? One thing you can do is check
+references with founders that those investors have worked with - just as with recruiting any talent.
+
+Interestingly, many founders feel that this reference check and balance may be causing many VCs to be less transparent
+in terms of providing feedback with the founders they work with - since they’re afraid of getting bad feedback and
+losing their next investment opportunity - so a number of founders have started bringing on independents much sooner.
+
+In their series B, Atrium founder Justin Kan added YC partner Michael Seibel––a former co-founder of his at Justin.tv.
+Similarly, the Brex founders (Henrique and Pedro) added TFG Founder/CEO Victor Lazarte, another founder from Brazil who
+has known them since the age of 16. The Faire founders (Max, Marcelo, and Daniele) added Brian Grassadonia, who leads
+Square Cash and was their former manager at Square. These are all examples of CEOs’ desire for deeply trusted
+independent board directors. Many of these relationships are likened to family relationships, where the family privately
+shares the kind of direct feedback no one else will. However this does not mean you add your friend to your board. You
+need someone you really trust, who is 100% independent, and has the ability to help both you and your team as you scale
+the company.
+
+## Managing Your Board
+
+Below, I’ve tried sharing our advice for managing your board - from how often to meet, to the materials you need - in
+order to ensure a useful and productive group discussion.
+
+### Meeting Schedule
+
+At the Series A stage, most meetings tend to be informal (like 1:1s), ranging anywhere from bi-weekly to even
+bi-monthly. By the time you reach the Series B stage, however, you should establish a regular meeting cadence: Every
+quarter, with all meetings scheduled a year in advance to ensure all board members can attend. Ideally, only in person\!
+
+### Agenda and length
+
+As the CEO it is your job to set and own the agenda for the board meeting, which can last about 3 hours.
+
+Be careful not to treat board meetings as a status update meeting, but rather as a meeting where you can openly discuss
+strategic or tough topics. That’s why the best CEOs tend to allot only the first 45 mins for sharing
+highlights/lowlights and KPIs (Key Performance Indicators), and then use the rest of the time to deep dive on no more
+than 1-2 strategic topics.
+
+Here’s an example agenda from the last board meeting I attended for Gusto (a company that offers payroll, benefits and
+HR for Small and Medium Businesses)––shared with their permission of course\!
+
+  - Highlights / Lowlights (10 mins)
+  - Performance / KPIs (50 mins)
+  - Strategic topic 1: Gusto 3 Year Strategic Plan (45 mins)
+  - Strategic topic 2: Engineering Org - Current and Future (45 mins)
+  - Closed Session - 30 mins (e.g., Any board matters such as approvals, sensitive topics, and feedback)
+
+What this shows is that the company spends no more than 1/3rd of the time on the state of the business, and then the
+majority of the time on the strategic issues that shape its future. I also recommend identifying and aligning on key
+KPIs with your board members early as it helps the company standardize reporting across board meetings. It also “trains”
+board members to efficiently process the most important ones quickly - focusing on the “why” (why did or didn’t you hit
+certain goals?) - so they can turn to more strategic matters.
+
+What really allows Gusto to pull off their strategic focus within their board meeting, however, happens *outside* the
+board meeting: (1) They do a lot of prep work on the areas where they’re seeking input. Ideally this is a topic you’re
+already discussing with your executive team so the materials can be leveraged for multiple discussions; and (2) They
+send out a pre-read version of their board deck at least a week in advance, collecting questions from each board member
+in a Google Doc three days before the meeting. The Gusto team then answers all those questions in the Google Doc by the
+morning of the board meeting, so the subsequent discussion *inside* the board meeting can focus on the two most
+strategic topics.
+
+Getting through the entire agenda effectively requires strict time management. Consider assigning formal time-keeping
+responsibilities to a rotating member in the room.
+
+### Elements of a board deck
+
+The board deck is just a tool for discussion, not an end in and of itself. For the principles of what goes into a board
+deck, Bryan Schrier from Sequoia has a great post [here](https://www.sequoiacap.com/article/preparing-a-board-deck/).
+
+This seems obvious, but is underrated: The structure of the board deck should align with the agenda of the meeting. For
+example, Gusto’s board decks are 30-50 pages long and typically have the following sections:
+
+  - Highlights / Lowlights - 1 page
+  - Performance / KPIs - 15 to 20 pages
+  - Strategic topic 1: Gusto 3 Year Strategic Plan - 5 to 10 pages  
+    ○ Options they considered  
+    ○ Decision framework  
+    ○ Product roadmap they plan to pursue  
+    ○ Product areas they don’t plan to pursue  
+    ○ Known vs. Unknown risks  
+    ○ Initial assessment of economic value to the business  
+    ○ Discussion on overall thinking and plan
+  - Strategic topic 2: Engineering Org - 5 to 10 pages  
+    ○ Current Engineering Org  
+    ○ Hiring Scale  
+    ○ Future Engineering Org (18 months)  
+    ○ Talent Assessment  
+    ○ Talent Plan: Retention, Development and Recruitment Opportunities
+  - Closed Session (no slides)
+  - Appendix  
+    ○ Health of the organization (10 slides): Hiring metrics by department, Close rates, and Employee Pulse Survey -
+    Results
+
+### Behind the scenes preparation
+
+Companies usually start planning a month in advance for the board meeting. In the case of Brex, the co-founders, CFO,
+and Chief of Staff align on the list of topics at least a month in advance and kick off a process to pull the materials
+together. The CFO leads the charge, working with executives across the company to align on inputs and topics for
+discussion.
+
+Here’s an example of a prep email sent by the Brex CFO to the team 28 days in advance of the board meeting, because
+obviously they are working on other things as well so they need that much time to prepare materials in between.
+
+  - T-28 days:  
+    ○ Founders/Chief of Staff: Identify the two strategic topics for discussion with the board  
+    ○ Share with executive team to align on topics for discussion
+  - T-18 days  
+    ○ Founders/CFO/Finance team:Outline topics and write/collect content to be covered  
+    ○ Share draft deck with end of month close data with executive team
+  - T-11 days  
+    ○ Execs comment/edit and provide feedback to Finance Team  
+    ○ Finance Team finalizes the deck including formatting  
+    ○ Final review if deck and backup data sent to founders and CFO
+  - T-7 days  
+    ○ Review and final run of edits  
+    ○ Distribute deck to Board of Directors (BoD)
+  - T-4 days  
+    ○ BoD submits questions (particularly on KPIs)
+  - T-2 days  
+    ○ Brex consolidates and answers all questions from BoD
+  - T-0  
+    ○ Set expectations upfront (which sections you want to spend the most time and where do you need more feedback)
+
+### Involving the executive team in board meetings
+
+Post-Series B, most companies will have an executive leadership team that helps the CEO scale and grow the company.
+Note, the general counsel and/or outside counsel can also be invited as part of this. It is important for at least one
+of the GC and/or outside counsel to attend all your board meetings to capture notes and discuss any sensitive issues
+that require attorney-client privilege.
+
+Since the board is tasked with scaling and governance, it is important for execs to get to know the board (and vice
+versa). There are two approaches here: (1) Ask your leadership team to attend the entire board meeting; or (2) Ask only
+those executives who have a section to present to the board join the meeting for a particular agenda item, for about 45
+minutes.
+
+The problem with the first approach of inviting all executives to the meeting is the board meeting can turn into a
+presentation vs. a discussion. It also becomes challenging for the founders and the CEO to discuss sensitive matters
+directly.
+
+That’s why I prefer the latter approach, where specific execs join just for that agenda item (usually about 45 minutes).
+This approach achieves three things: a meatier discussion on the strategic issue at hand; the executives hear the
+board’s feedback directly; and more time at the end of the meeting for the CEO and the board to discuss other
+sensitive matters on their own.
+
+Remember: The board meeting is not about selling to your board members. Of course, you want to show off great work and
+celebrate milestones. But, your board is already bought in, and the highest leverage on their time - and yours\! - is in
+helping you get to the next milestone.
+
+### Monthly updates
+
+In addition to quarterly in-person board meetings, it’s a good practice to send a 2-page monthly update email (sample
+[here](founder_link?slug=3w-how-to-create-and-manage-a-board)) to the board at the beginning of every month. The email
+usually includes a summary of last month’s performance; a hiring update; a section outlining burning issues; and a
+section with specific asks for help.
+
+Brex always makes two specific asks in their monthly emails: potential introductions to business partners/customers, and
+help with key roles they are looking to fill. In their monthly investor update, GitLab will ask for introductions to
+specific individuals at companies who can be potential customers -- they also applaud specific investors who have helped
+them in the past, putting pressure on the entire board to do the same.
+
+Getting into a good rhythm of sending monthly updates accomplishes three things: (1) Board members will go above and
+beyond to help you with your specific asks; (2) The board is better prepared for the in-person board meetings; and (3)
+It is a great way for you as the CEO to take a step back and reflect on the most important elements of your business and
+objectively measure how well you are doing as a company. Often writing vs. talking is more effective for showcasing your
+clarity of thought, and written narrative is more compelling in sharing ideas than bullet points and slides, as Jeff
+Bezos has argued [about
+memos](https://www.inc.com/carmine-gallo/jeff-bezos-bans-powerpoint-in-meetings-his-replacement-is-brilliant.html).
+
+### Bonus: Letter to the board
+
+In fact, some CEOs may even use the board meeting as an opportunity to take a step back and write a letter to the board.
+For example, Peter Reinhardt, CEO of Segment, writes a 3-5 page memo that focuses on highlights, lowlights, and areas
+where he would like to spend more time vs. where he’s spending time today. He prefers the written format vs. slides in
+the deck as it allows him to reflect on the quarter and articulate the company's future. More importantly, he focuses on
+his own strengths and weaknesses and what he could be doing better as a CEO.
+
+Faire often uses the written memo format to discuss the strategic priorities during the board meeting. The memo sets the
+context for the discussion, articulates their decision framework, and explains why they are recommending a particular
+approach. They also write down all the uncertainties and blind spots they have when it comes to making that decision.
+Not only do these memos help the board prepare for the discussion, but they help the CEO create a record of the quality
+of their decision-making processes.
+
+## Leveraging Your Board & Navigating Issues
+
+Most issues boil down to communication, which is why following the best practices outlined so far can help smooth the
+way. However, there are a lot of incremental opportunities CEOs may leave on the table when it comes to
+managing/leveraging their boards -- as well as obstacles that come up from frictions or specific issues. I’ll share our
+collective advice on navigating these below.
+
+### Mixed messages
+
+Conflicting viewpoints are a good thing\! The job of the board is to push you on your strategy and to ask questions that
+help you sharpen your thinking. As a CEO you should welcome conflicting opinions and should not feel pressure to get the
+board to come to a consensus decision.
+
+However, if the conflict reaches a point where it is hard to move the conversation forward, offer to take the
+conversation offline and set up 1:1’s or small group meetings to understand the conflicting views. After understanding
+conflicting viewpoints, use a decision-making framework (as an example see one below) to guide the discussion.
+
+A YC CEO recently shared how two board members had strong, directly conflicting opinions about the order in which they
+should pursue new products. The CEO took the discussion offline and came up with a decision-making framework (e.g.
+economic value, resources, cash needs, and competitive threat) to decide which path they were going to take. Coming up
+with the framework also made it quite clear which path was the right one for the company, and why. Sometimes the answer
+is not very clear but a framework is helpful when you decide to go against the board’s advice. Your board members will
+never be as close to the business to make that decision. While board members provide important input all CEOs should
+seriously consider, the CEO has the authority to make the best decision on behalf of the company. As long as you have a
+clear decision-making framework, your board members will understand when you disagree. Also with time if you are more
+right than wrong about your decisions, the board will be willing to disagree and commit to the path forward.
+
+### Asking board members for help
+
+As you get a better sense of the areas where different board members can be most helpful - whether it’s helping recruit
+execs, offering fundraising advice, or other areas - don’t hesitate to follow up directly with them outside of board
+meetings on those topics.
+
+Many CEOs seem to think it’s important to update every board member 1:1 on every topic. To which I say: NO\! Not every
+board member needs to be in the loop on every topic or issue; it’s an ineffective use of everyone’s time, including
+yours. I also think it is a poor use of time to update every board member 1:1 before every board meeting. Unless there
+are sensitive topics that need to be discussed before hand, don’t waste time doing 1:1 calls with board members to get
+everyone on the same page. Allow your board members to challenge you and the team during the board meetings and
+encourage conflicting views to help flesh out your thinking.
+
+### Balancing helpfulness vs control
+
+Be cautious of board members who are trying to make decisions for you. A board member’s job is to help you think through
+the issues by offering tools or decision frameworks––not to give you all the answers on how to run your business.
+
+In fact, great board members will often refrain from stating opinions; instead, they ask questions to help flesh out a
+CEO’s thinking. My fellow board member at Brex, Micky Malka of Ribbit Capital, does this: Even if the CEO asks for his
+opinion on, say, “What should our typical credit loss rate be?”, Micky would respond with examples of 10 startups in
+Ribbit’s portfolio and their trajectory along credit loss rates; share pros and cons of each approach; yet refrain from
+giving one definitive answer. In doing so, he empowers the founders to make the decision.
+
+### Problem (overbearing / unhelpful) board members
+
+As mentioned earlier, backchannel checks are a great way to test for quality and helpfulness, so take the time to do
+this. But, if you still end up getting stuck with an unhelpful board member, the best way to handle this is to first
+meet 1:1 and share that feedback, constructively (not unlike running a feedback meeting with your peers or direct
+reports).
+
+Be sure to focus on the issue at hand - don’t make it personal and/or scattered - and share specific examples from past
+board meetings where their feedback was not helpful. If you have a good relationship with other members of the board,
+you can also work with them to understand how to raise the issue with the unhelpful board member.
+
+In some cases, board members may step in and give feedback to fellow board members. But be careful about a board member
+who tries to work around the CEO. One YC company recently faced this - the board member started having direct meetings
+with senior management without the CEOs knowledge and jumped to conclusions without full context. This put the CEO in a
+really tough spot. The CEO used this as an opportunity to have 1:1 conversations with other board members, gather
+feedback, and directly approach the board member who was being disruptive. It took about 6 months to get the situation
+resolved and trust was re-established. The CEO worked with the rest of the board to set up a decision framework on when
+and how the board can intervene. Use every challenging situation as an opportunity to improve your existing processes.
+
+### Removing board members
+
+This one is really hard\! The situation arises when a board member is destructive to the company - trying to meddle,
+micromanage, act like an operator running the company - and sometimes even leaking information to the press. If you have
+tried everything (such as talking to the board member directly) and are convinced that your board member is destructive
+to the company, then you have a couple of options. I suggest the following, either (1) Approach someone senior at the
+firm (where the board member works) and seek a replacement or (2) Add more board members (independent or via new
+investment rounds) who can be a sounding board and help address some of the issues.
+
+If you pursue option (1), you will burn bridges with the board member and potentially the firm. If your company is not
+in good standing (*i.e.*, metrics don’t look good, and potential doesn’t look great) then it will be hard to find a
+replacement. You will likely be stuck with your current board member. However, if your company is doing well then you
+have more negotiating leverage than you think. If your company is one of the best performing companies in the VC’s
+portfolio, the firm will work hard to find you the board member that you want.
+
+If you pursue option (2), you can leverage other board members to push back when the unhelpful board member is giving
+advice that is not productive and could hurt the company. At the end of the day, you don’t have to listen to the board’s
+advice if you are convinced that it does more harm than good.
+
+That said, as a founder and CEO you should work to understand the gravity of the situation. Board members have the right
+intent––their job and their incentives are aligned to set the company up for success. If all your board members are
+echoing the same feedback and you are not listening, then the problem is likely you. Some CEOs bring their executive
+coach to one or two board meetings to get feedback on board dynamics. This may also help calibrate your perception of
+the board members around the table. I have also seen a few CEOs seek bi-annual feedback from the entire board via the
+executive coach.
+
+## Final Thoughts
+
+Many CEOs get nervous at the idea of board meetings. But they’re a good thing. They remind you that you are not alone.
+Your board of directors - when composed and managed well - is dedicated to your company’s success, which means they will
+challenge you to make better decisions but are on your side as long as you are being ethical and doing the right thing
+for the company. And of course, what is considered an effective board will evolve over time as the company matures. But,
+you can be intentional in building the right team of advisors up front, using the best practices outlined above. If
+knowing is half the battle, why not enlist the best help you can get?
+
+*Special thanks to Justin Kan, Sonal Chokshi, Ali Rowghani, Daniel Gackle, Adora Cheung, Craig Cannon, Gusto, Brex,
+Convoy and Faire founders for reading multiple drafts of this essay. Thank you to numerous YC founders for sharing their
+perspectives on this topic.*
+
+[32m2024-01-31 14:26:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/CU-amplitude-w12-is-going-public
+[32m2024-01-31 14:26:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - <p>Today, <a href="https://www.ycombinator.com/companies/amplitude">Amplitude</a>, which was part of YC’s W12 batch, is going public. Their story of grit, determination, and creativity, is an epic one.</p>
+
+<p>Spenser and Curtis first applied to YC in 2011, but their idea, a new version of Mechanical Turk, did not impress YC’s reviewers at the time, and although they were clearly brilliant hackers, that first application was rejected.</p>
+
+<p>It is always a good sign when founders come back and, indeed, they came up with a new idea and applied for the Winter 2012 batch. Their company “Sonalight”, was accepted to YC W12, despite what Spenser remembers as PG’s skepticism that the technology and market were ready for the product they intended to build.</p>
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2021/09/2011-03-22-Spenser-Curtis-at-SFO.jpg" alt="Amplitude founders" width="340" height="299" class="size-full wp-image-1104944" /><br/>
+<b>Amplitude founders Spenser Skates and Curtis Liu - March 2011</b>
+
+<p>Their new idea was intended to make it safe to text while driving by converting text to speech. This wasn’t nearly so common or easy back then, and despite PG’s skepticism, it was clear to us that this was a team focused on building products that customers actually wanted and needed. They successfully built the software, but had a hard time finding paying customers. It turns out that although this is a good idea (many of us use something of the sort today), PG’s insight had been right-on and at the time, it wasn’t a great business. Spenser and Curtis figured this out rapidly and by the spring of 2012 they were searching once again for the right product to build.</p>
+
+<p>I remember having office hours with Spenser and Curtis at the time, and they were considering a product in the education space, which naturally I loved and encouraged. But, in fact, they rather quickly settled on a different problem space that they understood deeply and which immediately resonated with their batchmates. It was also a problem for which the market had not yet, in Spenser and Curtis’s opinion, come up with a great solution. Their chosen target was, of course, mobile analytics. This, it turned out, was precisely the right idea for the team. Around this time, Jeffrey Wang, a Stanford computer scientist and top-quality hacker, joined Spenser and Curtis as co-founder.</p>
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2021/09/2014-09-Stanford-Fall-Career-Fair-Spenser-Jeffrey.jpg" alt="Amplitude Founders" width="960" height="720" class="size-full wp-image-1104946" /><br/>
+<b>Amplitude founders Spenser Skates and and Jeffrey Wang - September 2014</b>
+
+<p>When an excellent team turns to a new problem, you see results unbelievably quickly. In just a few months, they were ready to launch.
+
+<img src="https://blog.ycombinator.com/wp-content/uploads/2021/09/Amplitude-Dashboard.jpeg" alt="Amplitude Dashboard" width="2048" height="1224" class="size-full wp-image-1104949" />
+<br/> <b>The monitor on the wall had Amplitude's analytics dashboard on it, and it was on 24/7.</b>
+
+One thing no one could ever doubt about the Amplitude founders was their ability to build: they are really strong
+hackers. And once they had a product, they almost immediately had customers. This was a really good sign. Within a
+couple of months, everyone’s confidence was soaring. We all, including PG, believed in the team and the idea, and it was
+pretty obvious they were onto something real.</p>
+
+<p>A year later, Amplitude had real revenue, was tracking billions of events per month, and the epic company they have become was taking shape.</p>
+
+<p><img src="https://blog.ycombinator.com/wp-content/uploads/2021/09/2015-02-08-22.25.48.jpg" alt="Amplitude team - 2015" width="1280" height="960" class="size-full wp-image-1104947" /><br/> <b>Amplitude team - February 2015</b>
+
+<p>Over the subsequent years, the team was met with lots of skepticism about the size of their opportunity, but at every stage, they simply put their heads down, built fantastic software and products, and grew. They stayed close to YC, even sharing an office with our own Michael Seibel, who was running SocialCam at the time. In the end, Amplitude managed to dominate their market and today’s public offering is a huge testament to the fearlessness and smarts which stood out nearly ten years ago. Our heartfelt congratulations to Spenser, Curtis, Jeffrey and everyone at Amplitude.</p>
+
+[32m2024-01-31 14:26:17 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs - https://www.ycombinator.com/library/JH-coming-soon
+[32m2024-01-31 14:26:17 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - combined_and_cleaned_docs
+[32m2024-01-31 14:26:17 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - a35b02ce-ab27-4734-9078-ccabe29f2cca - 57521 - combined_and_cleaned_docs - STEP_FAILURE - Execution of step "combined_and_cleaned_docs" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "combined_and_cleaned_docs"::
+
+IndexError: index -1 is out of bounds for axis 0 with size 0
+
+Stack Trace:
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 222, in combined_and_cleaned_docs
+    context.add_output_metadata(
+                        ^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 218, in chunk_document
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/chunker/DocumentChunker.py", line 56, in chunk_document
+    self.calculate_distances_and_chunk()
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/chunker/DocumentChunker.py", line 24, in calculate_distances_and_chunk
+    indices_above_thresh = get_indices_above_threshold(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/chunker/embeddings.py", line 21, in get_indices_above_threshold
+    breakpoint_distance_threshold = np.percentile(
+                                    ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+           ^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+        ^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4721, in _quantile_ureduce_func
+    result = _quantile(arr,
+             ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4830, in _quantile
+    slices_having_nans = np.isnan(arr[-1, ...])
+                                  ~~~^^^^^^^^^
+[0m

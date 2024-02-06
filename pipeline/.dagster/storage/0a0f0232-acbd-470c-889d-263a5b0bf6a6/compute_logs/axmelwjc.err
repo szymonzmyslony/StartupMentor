@@ -1,0 +1,98 @@
+[32m2024-02-05 13:23:27 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - 55056 - LOGS_CAPTURED - Started capturing logs in process (pid: 55056).
+[32m2024-02-05 13:23:27 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - 55056 - fetched_blog_content - STEP_START - Started execution of step "fetched_blog_content".
+[32m2024-02-05 13:23:27 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - fetched_blog_content - Loading file from: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/sorted_links using PickledObjectFilesystemIOManager...
+[32m2024-02-05 13:23:27 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - 55056 - fetched_blog_content - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step fetched_blog_content
+[32m2024-02-05 13:23:27 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - 55056 - fetched_blog_content - LOADED_INPUT - Loaded input "sorted_links" using input manager "io_manager"
+[32m2024-02-05 13:23:27 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - 55056 - fetched_blog_content - STEP_INPUT - Got input "sorted_links" of type "Any". (Type check passed).
+[32m2024-02-05 13:24:12 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 0a0f0232-acbd-470c-889d-263a5b0bf6a6 - 55056 - fetched_blog_content - STEP_FAILURE - Execution of step "fetched_blog_content" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "fetched_blog_content"::
+
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+Stack Trace:
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 128, in fetched_blog_content
+    content = extract_article_to_json(url)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/blog_scraper.py", line 18, in extract_article_to_json
+    response = requests.get(url)
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+
+The above exception occurred during handling of the following exception:
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+Stack Trace:
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/util/retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/03q8gn91mj95y5bqbcl90hyvmpqpz738-python3-3.11.7/lib/python3.11/http/client.py", line 1386, in getresponse
+    response.begin()
+  File "/nix/store/03q8gn91mj95y5bqbcl90hyvmpqpz738-python3-3.11.7/lib/python3.11/http/client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/03q8gn91mj95y5bqbcl90hyvmpqpz738-python3-3.11.7/lib/python3.11/http/client.py", line 294, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+
+The above exception occurred during handling of the following exception:
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+Stack Trace:
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/urllib3/connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/03q8gn91mj95y5bqbcl90hyvmpqpz738-python3-3.11.7/lib/python3.11/http/client.py", line 1386, in getresponse
+    response.begin()
+  File "/nix/store/03q8gn91mj95y5bqbcl90hyvmpqpz738-python3-3.11.7/lib/python3.11/http/client.py", line 325, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/03q8gn91mj95y5bqbcl90hyvmpqpz738-python3-3.11.7/lib/python3.11/http/client.py", line 294, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+[0m

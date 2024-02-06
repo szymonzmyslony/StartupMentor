@@ -1,0 +1,29 @@
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - LOGS_CAPTURED - Started capturing logs in process (pid: 60313).
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - STEP_START - Started execution of step "combined_and_cleaned_docs".
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - Loading file from: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/blogs_content using PickledObjectFilesystemIOManager...
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step combined_and_cleaned_docs
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - LOADED_INPUT - Loaded input "blogs_content" using input manager "io_manager"
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - STEP_INPUT - Got input "blogs_content" of type "Any". (Type check passed).
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/8f-how-to-spin-your-scientific-research-out-of-a-university-and-into-a-startup
+[32m2024-01-31 14:55:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 114
+[32m2024-01-31 14:56:50 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/4j-startup-hr-what-s-important
+[32m2024-01-31 14:56:50 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 66
+[32m2024-01-31 14:57:27 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/2z-pinduoduo-and-the-rise-of-social-e-commerce
+[32m2024-01-31 14:57:27 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 82
+[32m2024-01-31 14:59:10 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/4m-enterprise-sales-for-hackers
+[32m2024-01-31 14:59:10 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 67
+[32m2024-01-31 15:00:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/4T-how-to-design-a-better-pitch-deck
+[32m2024-01-31 15:00:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 72
+[32m2024-01-31 15:02:02 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/3w-how-to-create-and-manage-a-board
+[32m2024-01-31 15:02:02 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 71
+[32m2024-01-31 15:04:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/CU-amplitude-w12-is-going-public
+[32m2024-01-31 15:04:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 68
+[32m2024-01-31 15:04:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/4g-the-scientific-method-for-startups
+[32m2024-01-31 15:04:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 73
+[32m2024-01-31 15:04:38 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - https://www.ycombinator.com/library/4b-how-to-pitch-your-company
+[32m2024-01-31 15:04:38 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - 64
+[32m2024-01-31 15:05:17 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - STEP_OUTPUT - Yielded output "result" of type "[Any]". (Type check passed).
+[32m2024-01-31 15:05:17 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - combined_and_cleaned_docs - Writing file at: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/combined_and_cleaned_docs using PickledObjectFilesystemIOManager...
+[32m2024-01-31 15:05:17 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - ASSET_MATERIALIZATION - Materialized value combined_and_cleaned_docs.
+[32m2024-01-31 15:05:17 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2024-01-31 15:05:17 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 33678d70-5532-4ed2-aeb5-27473009362d - 60313 - combined_and_cleaned_docs - STEP_SUCCESS - Finished execution of step "combined_and_cleaned_docs" in 10m10s.

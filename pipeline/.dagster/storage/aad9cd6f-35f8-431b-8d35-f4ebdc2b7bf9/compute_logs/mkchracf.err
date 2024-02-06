@@ -1,0 +1,33 @@
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - LOGS_CAPTURED - Started capturing logs in process (pid: 12880).
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - STEP_START - Started execution of step "docs_for_embeddings".
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - docs_for_embeddings - Loading file from: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/combined_and_cleaned_docs using PickledObjectFilesystemIOManager...
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step docs_for_embeddings
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - LOADED_INPUT - Loaded input "combined_and_cleaned_docs" using input manager "io_manager"
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - docs_for_embeddings - Loading file from: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/combined_and_cleaned_video_docs using PickledObjectFilesystemIOManager...
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step docs_for_embeddings
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - LOADED_INPUT - Loaded input "combined_and_cleaned_video_docs" using input manager "io_manager"
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - STEP_INPUT - Got input "combined_and_cleaned_docs" of type "Any". (Type check passed).
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - STEP_INPUT - Got input "combined_and_cleaned_video_docs" of type "Any". (Type check passed).
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - docs_for_embeddings - https://www.ycombinator.com/library/AQ-how-to-pick-which-startup-to-work-at
+[32m2024-02-02 09:36:28 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - aad9cd6f-35f8-431b-8d35-f4ebdc2b7bf9 - 12880 - docs_for_embeddings - STEP_FAILURE - Execution of step "docs_for_embeddings" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "docs_for_embeddings"::
+
+ValueError: min() arg is an empty sequence
+
+Stack Trace:
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 319, in docs_for_embeddings
+    min_length = min(lengths)
+                 ^^^^^^^^^^^^
+[0m

@@ -1,0 +1,292 @@
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - 16021 - LOGS_CAPTURED - Started capturing logs in process (pid: 16021).
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - 16021 - combined_and_cleaned_video_docs - STEP_START - Started execution of step "combined_and_cleaned_video_docs".
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Loading file from: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/complete_video_content using PickledObjectFilesystemIOManager...
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - 16021 - combined_and_cleaned_video_docs - ASSET_OBSERVATION - DagsterEventType.ASSET_OBSERVATION for step combined_and_cleaned_video_docs
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - 16021 - combined_and_cleaned_video_docs - LOADED_INPUT - Loaded input "complete_video_content" using input manager "io_manager"
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - 16021 - combined_and_cleaned_video_docs - STEP_INPUT - Got input "complete_video_content" of type "Any". (Type check passed).
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/GV-should-you-start-a-startup
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 26
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: False
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on double lines
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 2307
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2307
+[32m2024-02-02 10:24:06 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 27 paragraphs
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 26 paragraphs
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 4 chunks
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/6q-how-to-pitch-your-startup
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 90
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: False
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on double lines
+[32m2024-02-02 10:24:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 91 paragraphs
+[32m2024-02-02 10:24:11 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 90 paragraphs
+[32m2024-02-02 10:24:11 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 2 chunks
+[32m2024-02-02 10:24:11 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/J0-inside-the-group-partner-lounge-when-to-launch-your-startup
+[32m2024-02-02 10:24:11 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:24:11 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:11 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:12 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:24:12 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 390 paragraphs
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 388 paragraphs
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 4 chunks
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/Jq-garry-s-channel-should-you-be-the-ceo
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 0
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:19 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 99 paragraphs
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 99 paragraphs
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 2 chunks
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/8h-how-to-find-the-right-co-founder
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 32
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: False
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on double lines
+[32m2024-02-02 10:24:22 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 33 paragraphs
+[32m2024-02-02 10:24:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 32 paragraphs
+[32m2024-02-02 10:24:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 5 chunks
+[32m2024-02-02 10:24:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/8H-analytics-for-startups
+[32m2024-02-02 10:24:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:24:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:23 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:25 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:24:25 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 602 paragraphs
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 600 paragraphs
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 7 chunks
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/DY-dalton-michael-yc-founders-made-these-fundraising-mistakes
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 5589
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2322
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2516
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 749
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 4 paragraphs
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 4 paragraphs
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 2 chunks
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/AQ-how-to-pick-which-startup-to-work-at
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:33 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 3858
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2368
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 1489
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 2548
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2320
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 227
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 3138
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2322
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 815
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 19227
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2357
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2402
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2479
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2462
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2458
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2431
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2352
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2279
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 30313
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2574
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2490
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2512
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2480
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2581
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2519
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2448
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2672
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2610
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2614
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2532
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2270
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 21801
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2510
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2632
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2596
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2450
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2601
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2520
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2440
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2572
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 1472
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 8703
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2568
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2591
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2557
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 984
+[32m2024-02-02 10:24:34 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 45 paragraphs
+[32m2024-02-02 10:24:36 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 45 paragraphs
+[32m2024-02-02 10:24:36 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 6 chunks
+[32m2024-02-02 10:24:36 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/KD-how-to-convert-more-visitors-into-customers
+[32m2024-02-02 10:24:36 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:24:36 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:36 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:37 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:24:37 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 637 paragraphs
+[32m2024-02-02 10:24:56 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 635 paragraphs
+[32m2024-02-02 10:24:56 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 7 chunks
+[32m2024-02-02 10:24:56 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/61-order-of-operations-for-starting-a-startup
+[32m2024-02-02 10:24:56 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:24:56 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:24:56 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:24:57 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:24:57 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 399 paragraphs
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 397 paragraphs
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 5 chunks
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/5x-how-to-split-equity-among-co-founders
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:25:58 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 106 paragraphs
+[32m2024-02-02 10:26:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 104 paragraphs
+[32m2024-02-02 10:26:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 2 chunks
+[32m2024-02-02 10:26:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/DZ-dalton-michael-co-founder-mistakes-that-kill-companies-and-how-to-avoid-them
+[32m2024-02-02 10:26:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:26:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:26:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:26:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:26:08 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 269 paragraphs
+[32m2024-02-02 10:26:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 267 paragraphs
+[32m2024-02-02 10:26:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 4 chunks
+[32m2024-02-02 10:26:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/8G-advice-for-hard-tech-and-biotech-founders
+[32m2024-02-02 10:26:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:26:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:26:13 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:26:15 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:26:15 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 592 paragraphs
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 590 paragraphs
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 6 chunks
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/77-how-to-invent-the-future-part-1
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 4
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on double lines
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 45647
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2228
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2208
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2133
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2162
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2361
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2181
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2178
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2231
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2156
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2179
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2178
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2166
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2174
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2231
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2192
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2270
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2236
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2135
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2125
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2125
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 1778
+[32m2024-02-02 10:26:28 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 25 paragraphs
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 22 paragraphs
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 4 chunks
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/6G-how-to-build-the-future
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Could not split on punctuation, splitting on single new line instead
+[32m2024-02-02 10:26:30 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 580 paragraphs
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 578 paragraphs
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - We have 7 chunks
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - https://www.ycombinator.com/library/5w-on-starting-and-scaling-second-measure-yc-w15
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - double_newline_count: 1
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - fetched_from_youtube: True
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Splitting on punctuation
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 3710
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2332
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 1377
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - super long 47077
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2379
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2500
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2554
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2365
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2405
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2550
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2415
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2509
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2564
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2450
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2515
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2438
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2433
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2546
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2400
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2502
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2557
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2398
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - result length is 2579
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Returning 21 paragraphs
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 0
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 1
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 2
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 3
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 4
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 5
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 6
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 7
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 8
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 9
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 10
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 11
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 12
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 13
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 14
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 15
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 16
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 17
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 18
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 19
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - combined_and_cleaned_video_docs - Single paragraph exceeds token limit at index 20
+[32m2024-02-02 10:26:41 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 8642cfd9-2323-4ee5-966a-7d41ccf1592e - 16021 - combined_and_cleaned_video_docs - STEP_FAILURE - Execution of step "combined_and_cleaned_video_docs" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "combined_and_cleaned_video_docs"::
+
+IndexError: index -1 is out of bounds for axis 0 with size 0
+
+Stack Trace:
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 283, in combined_and_cleaned_video_docs
+    cleaned_documents = [
+                        ^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 288, in <listcomp>
+    chunk_document(video, video["fetching_transcript"])
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/pipeline/assets.py", line 278, in chunk_document
+    transript_chunks, _ = transcript_chunker.chunk_document()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/chunker/DocumentChunker.py", line 163, in chunk_document
+    self.calculate_distances_and_chunk()
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/chunker/DocumentChunker.py", line 118, in calculate_distances_and_chunk
+    indices_above_thresh = get_indices_above_threshold(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/projects/master-pipeline/pipeline/chunker/embeddings.py", line 21, in get_indices_above_threshold
+    breakpoint_distance_threshold = np.percentile(
+                                    ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+           ^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+        ^^^^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4721, in _quantile_ureduce_func
+    result = _quantile(arr,
+             ^^^^^^^^^^^^^^
+  File "/Users/szymonzmyslony/Library/Caches/pypoetry/virtualenvs/pipeline-RtkjAAJa-py3.11/lib/python3.11/site-packages/numpy/lib/function_base.py", line 4830, in _quantile
+    slices_having_nans = np.isnan(arr[-1, ...])
+                                  ~~~^^^^^^^^^
+[0m
