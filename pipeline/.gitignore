@@ -1,4 +1,7 @@
-./yc_manual/
-*/.env
-./chunked_data/
-./text_data/
+yc_manual/
+.env
+chunked_data/
+text_data/
+__pycache__/
+chunker/__pycache__/
+.dagster/

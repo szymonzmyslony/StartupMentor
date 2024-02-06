@@ -1,7 +1,0 @@
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - 50147 - LOGS_CAPTURED - Started capturing logs in process (pid: 50147).
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - 50147 - manual_articles - STEP_START - Started execution of step "manual_articles".
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - 50147 - manual_articles - STEP_OUTPUT - Yielded output "result" of type "[Any]". (Type check passed).
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - manual_articles - Writing file at: /Users/szymonzmyslony/projects/master-pipeline/pipeline/.dagster/storage/manual_articles using PickledObjectFilesystemIOManager...
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - 50147 - manual_articles - ASSET_MATERIALIZATION - Materialized value manual_articles.
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - 50147 - manual_articles - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
-[32m2024-01-31 12:16:57 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 53e58200-8bd4-489a-acbf-64c27a053b24 - 50147 - manual_articles - STEP_SUCCESS - Finished execution of step "manual_articles" in 51ms.
