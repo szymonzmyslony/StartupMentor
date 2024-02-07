@@ -1,39 +1,44 @@
 {
-  description = "Python project";
+  description = "Environment with Python, TypeScript, and Bun";
 
-  inputs.flake-compat.url = "github:edolstra/flake-compat";
-  inputs.flake-compat.flake = false;
-  inputs.nixpkgs = {
-    url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.flake-utils.inputs.nixpkgs.follows = "nixpkgs";
 
-
-  outputs = {
-    self,
-    flake-compat,
-    flake-utils,
-    nixpkgs,
-    ...
-  } @ inputs:
+  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
-    let pkgs = nixpkgs.legacyPackages.${system}; in
-    rec {
-      formatter = nixpkgs.legacyPackages."${system}".alejandra;
-      packages = {};
-      devShell = pkgs.mkShell {
-        packages = [
-          pkgs.graphviz
-          pkgs.python312
-          pkgs.poetry
-          pkgs.nil
-          pkgs.nixfmt
-        ];
-        shellHook = ''
-          poetry install
-          source $(poetry env info --path)/bin/activate
-        '';
-      };
-    });
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [];
+        };
+      in
+      {
+        devShell = pkgs.mkShell {
+          buildInputs = [
+            pkgs.poetry
+            pkgs.python3
+            pkgs.nodejs      # Include if Node.js is still needed for other tasks
+            pkgs.bun         # Bun package directly from Nixpkgs
+            pkgs.typescript  # Include if TypeScript is needed separately
+          ];
+
+          shellHook = ''
+            if [ -f "pyproject.toml" ]; then
+              # We are likely in the Python project directory
+              echo "Initializing Poetry environment..."
+              poetry install
+              source $(poetry env info --path)/bin/activate
+            fi
+
+            if [ -f "package.json" ] || [ -f "bun.lockb" ]; then
+              # We are likely in the TypeScript/JavaScript project directory
+              echo "Installing dependencies with Bun..."
+              bun install
+            fi
+          '';
+        };
+      }
+    );
 }

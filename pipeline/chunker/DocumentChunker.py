@@ -1,6 +1,10 @@
 import math
 from chunker.clean_document import MAX_LENGTH, process_document
-from chunker.embeddings import get_embedding, get_indices_above_threshold
+from chunker.embeddings import (
+    batch_paragraphs,
+    get_embedding,
+    get_indices_above_threshold,
+)
 from chunker.openai_utils import num_tokens_from_string
 from chunker.similarity import calculate_cosine_distances
 import numpy as np
@@ -30,48 +34,9 @@ class DocumentChunker:
         dynamic_threshold = min_threshold + (max_threshold - min_threshold) * log_scale
         return min(dynamic_threshold, max_threshold)
 
-    def batch_paragraphs(self, paragraphs, max_tokens=8192):
-        all_batches = []
-        current_batch, current_batch_tokens = [], 0
-
-        for paragraph in paragraphs:
-            paragraph_tokens = num_tokens_from_string(paragraph)
-
-            if paragraph_tokens > max_tokens:
-                # Handle oversized paragraphs by either splitting them or deciding to process them individually
-                # For simplicity, we'll add oversized paragraphs in a batch on their own
-                if current_batch:  # Ensure the current batch is not empty
-                    all_batches.append(current_batch)  # Save the current batch
-                    current_batch, current_batch_tokens = (
-                        [],
-                        0,
-                    )  # Reset for the next batch
-
-                all_batches.append(
-                    [paragraph]
-                )  # Add the oversized paragraph in its own batch
-                self.logger(
-                    f"Paragraph exceeds token limit, processed individually: {paragraph[:30]}..."
-                )
-                continue  # Skip to the next paragraph
-
-            if current_batch_tokens + paragraph_tokens <= max_tokens:
-                current_batch.append(paragraph)
-                current_batch_tokens += paragraph_tokens
-            else:
-                all_batches.append(current_batch)  # Current batch is full, save it
-                current_batch, current_batch_tokens = [
-                    paragraph
-                ], paragraph_tokens  # Start a new batch with the current paragraph
-
-        if current_batch:  # Don't forget to add the last batch if it has any paragraphs
-            all_batches.append(current_batch)
-
-        return all_batches
-
     def embed_paragraphs(self):
 
-        batches = self.batch_paragraphs(self.paragraphs)
+        batches = batch_paragraphs(self.paragraphs, self.logger)
         all_embeddings = []
         for batch in batches:
             batch_embeddings = [x.embedding for x in get_embedding(batch)]

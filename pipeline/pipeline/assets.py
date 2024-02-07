@@ -1,32 +1,25 @@
-import base64
-from cgitb import text
-from io import BytesIO
 import json
 import os
-import random
-import string
 import re
 from chunker.DocumentChunker import DocumentChunker
-from cycler import concat
+from pipeline.SupabasePipeline import SupabaseDocumentInserter
 import requests
 from dagster import (
     AssetExecutionContext,
     asset,
 )  # import the `dagster` library
 import pandas as pd
-import matplotlib.pyplot as plt
 from typing import Dict, List
 import xml.etree.ElementTree as ET
 import re
 import numpy as np
 from yaml import DocumentEndEvent
+from .file_utils import save_documents_to_files
 
 # from chunker.DocumentChunker import DocumentChunker
 from pipeline.utils import extract_manual_docs
 from .video_scraper import get_transcript
-
 from .blog_scraper import extract_article_to_json, parse_md_into_string
-
 from .data_utils import sort_yc_links
 
 
@@ -261,12 +254,8 @@ def combined_and_cleaned_video_docs(
 ) -> List:
     def chunk_document(document):
         context.log.info(document["url"])
-        # context.log.info(document["transcript"])
         title = document["title"]
         description = document["description"]
-        # if content and len(content) > 10:
-        #     content = parse_md_into_string(content)
-        #     description = description + f"{content}"
 
         transcript = document["transcript"]
         transcript_chunker = DocumentChunker(
@@ -316,31 +305,6 @@ def combined_and_cleaned_video_docs(
 # import os
 
 
-def save_documents_to_files(combined_docs, base_dir="text_data"):
-    """
-    Saves each document from the combined list of documents to a separate file in the specified directory.
-
-    Args:
-    combined_docs (List[Dict]): The combined list of document dictionaries.
-    base_dir (str): The base directory where the files will be saved.
-    """
-    # Ensure the base directory exists
-    os.makedirs(base_dir, exist_ok=True)
-
-    # Iterate over each document in the combined list
-    for i, doc in enumerate(combined_docs):
-        # Construct a unique filename for each document
-        filename = f"doc_{i}.json"
-        file_path = os.path.join(base_dir, filename)
-
-        # Save the document's content to a JSON file
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(doc, f, ensure_ascii=False, indent=4)
-
-        # Optional: Log the path of the saved file for verification
-        print(f"Document saved to: {file_path}")
-
-
 # # Example usage
 
 
@@ -352,43 +316,55 @@ def docs_for_embeddings(
 ) -> List:
 
     # Collect lengths of all text chunks
-    text_chunk_lengths = [
-        len(chunk[0]) for doc in chunked_blog_docs for chunk in doc["content"]
+
+    combined_docs = (
+        list(
+            map(
+                lambda x: {
+                    **{k: v for k, v in x.items() if k != "transcript"},
+                    "content": x["transcript"],
+                },
+                combined_and_cleaned_video_docs,
+            )
+        )
+        + chunked_blog_docs
+    )
+    combined_chunk_lengths = [
+        len(chunk[0]) for doc in combined_docs for chunk in doc["content"]
     ]
-    context.log.info(f"Text Chunk Lengths: {text_chunk_lengths}")  # Debugging log
 
     # Calculate average length of text chunks using numpy and convert to Python float
-    avg_text_length = float(np.average(text_chunk_lengths))
-    max_text_length = float(np.max(text_chunk_lengths))
-    min_text_length = float(np.min(text_chunk_lengths))
+    avg_combined_length = float(np.average(combined_chunk_lengths))
+    max_combined_length = float(np.max(combined_chunk_lengths))
+    min_combined_length = float(np.min(combined_chunk_lengths))
 
     # Collect lengths of all video chunks
-    video_chunk_lengths = [
-        len(chunk[0])
-        for doc in combined_and_cleaned_video_docs
-        for chunk in doc["transcript"]
-    ]
-
-    # Calculate average length of video chunks using numpy and convert to Python float
-    avg_video_length = (
-        float(np.average(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    )
-    max_video_length = (
-        float(np.max(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    )
-    min_video_length = (
-        float(np.min(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    )
-    # Initialize variables to keep track of the maximum and minimum lengths and the corresponding chunks
+    # video_chunk_lengths = [
+    #     len(chunk[0])
+    #     for doc in combined_and_cleaned_video_docs
+    #     for chunk in doc["transcript"]
+    # # ]
+    # sum_video = float(np.sum(video_chunk_lengths)) if video_chunk_lengths else 0.0
+    # # # Calculate average length of video chunks using numpy and convert to Python float
+    # avg_video_length = (
+    #     float(np.average(video_chunk_lengths)) if video_chunk_lengths else 0.0
+    # )
+    # max_video_length = (
+    #     float(np.max(video_chunk_lengths)) if video_chunk_lengths else 0.0
+    # )
+    # min_video_length = (
+    #     float(np.min(video_chunk_lengths)) if video_chunk_lengths else 0.0
+    # )
+    # # Initialize variables to keep track of the maximum and minimum lengths and the corresponding chunks
 
     max_length = 0
     max_chunk = None
     min_length = float("inf")  # Set initial min_length to infinity for comparison
     min_chunk = None
 
-    # Iterate over blog documents and their content chunks
-    for doc in combined_and_cleaned_video_docs:
-        for chunk in doc["transcript"]:
+    # # Iterate over blog documents and their content chunks
+    for doc in combined_docs:
+        for chunk in doc["content"]:
             # Calculate the length of the current chunk
             chunk_length = len(chunk[0]) if chunk and chunk[0] else 0
 
@@ -415,28 +391,50 @@ def docs_for_embeddings(
             f"Text Chunk with Minimum Length: {min_chunk[:100]}..."
         )  # Show only the first 100 characters for brevity
 
-        # Proceed with the rest of the function as before
-
-    combined_docs = combined_and_cleaned_video_docs + chunked_blog_docs
+    #     # Proceed with the rest of the function as before
 
     # Add metadata for context
     context.add_output_metadata(
         metadata={
             "max_chunk": max_chunk,
             "min_chunk": min_chunk,
-            "max_text_length": max_text_length,
-            "min_text_length": min_text_length,
-            "avg_text_chunk_length": avg_text_length,
-            "max_video_length": max_video_length,
-            "avg_video_chunk_length": avg_video_length,
-            "min_video_length": min_video_length,
+            "max_text_length": max_combined_length,
+            "min_text_length": min_combined_length,
+            "avg_text_chunk_length": avg_combined_length,
             "sample": combined_docs[:5],
             "sample1": combined_docs[-6:-1],
-            "total_docs": len(combined_and_cleaned_video_docs) + len(chunked_blog_docs),
-            "total_text_chunks": len(text_chunk_lengths),
-            "total_video_chunks": len(video_chunk_lengths),
+            "keys": list(combined_docs[0].keys()),
+            "total_docs": len(combined_docs),
+            # "total_video_chunks": len(video_chunk_lengths),
         }
     )
-    save_documents_to_files(combined_docs)
+    save_documents_to_files(combined_docs, "./data")
     # Combine and return all documents
-    return combined_and_cleaned_video_docs + chunked_blog_docs
+    return combined_docs
+
+
+url: str = "https://tqgqncfjpjpmsqstegnc.supabase.co"
+key: str = (
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRxZ3FuY2ZqcGpwbXNxc3RlZ25jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDcxNjE1MDYsImV4cCI6MjAyMjczNzUwNn0.J3PDrkKEiZOW02W8yZ2-8V_Hyqyh0p3rxguo0SyYkYw"
+)
+
+
+@asset
+def embed_and_save_docs(context: AssetExecutionContext, docs_for_embeddings) -> List:
+    inserter = SupabaseDocumentInserter(url, key)
+    errors = []
+
+    for index, doc in enumerate(docs_for_embeddings):
+        inserter.insert_doc_with_chunks(doc, context.log.info)
+
+        # try:
+        #     # inserter.insert_doc_with_chunks(doc, context.log.info)
+        # except Exception as e:
+        # Log the error using your context's logging mechanism
+        # context.log.error(
+        #     f"Error processing document {doc.get('title', 'Unknown')}: {str(e)}"
+        # )
+        # Add error details to the errors list
+        # errors.append({"error": str(e)})
+    context.add_output_metadata(metadata={"errors": errors})
+    return errors

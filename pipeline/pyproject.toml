@@ -2,7 +2,7 @@
 name = "pipeline"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Your Name <szymon.zmyslony@gmail.com>"]
 
 [tool.dagster]
 module_name = "pipeline"
@@ -13,24 +13,17 @@ python = "3.11.7"
 requests = "^2.31.0"
 beautifulsoup4 = "^4.12.3"
 youtube-transcript-api = "^0.6.2"
-tqdm = "^4.66.1"
 tiktoken = "^0.5.2"
 openai = "^1.9.0"
-pydantic = "^2.5.3"
-ipykernel = "^6.29.0"
 dagster = "^1.6.2"
 dagster-webserver = "^1.6.2"
-pandas = "^2.2.0"
-matplotlib = "^3.8.2"
 lxml = "^5.1.0"
 markdown = "^3.5.2"
-scikit-learn = "^1.4.0"
-instructor = "^0.4.8"
+supabase = "^2.3.4"
+numpy = "^1.26.4"
+scipy = "^1.12.0"
+pandas = "^2.2.0"
 
-[[tool.poetry.source]]
-name = "grpcio"
-url = "https://github.com/dagster-io/build-grpcio/wiki/Wheels"
-priority = "primary"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
