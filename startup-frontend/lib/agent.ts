@@ -133,7 +133,6 @@ async function runConversation(
   data.append({
     text: 'Hello, how are you?'
   })
-  return stream
   return new StreamingTextResponse(stream, {}, data)
 }
 

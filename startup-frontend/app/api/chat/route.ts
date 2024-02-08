@@ -43,5 +43,5 @@ export async function POST(req: Request) {
       member: `chat:${id}`
     })
   }
-  return await runConversation(messages, onCompletion)
+  return runConversation(messages, onCompletion)
 }
