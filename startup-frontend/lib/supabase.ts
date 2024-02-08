@@ -14,7 +14,7 @@ class Supabase {
   // Match chunks based on query embedding
   matchChunk = async (
     queryEmbedding: Array<number>,
-    topK = 10,
+    topK = 5,
     matchThreshold = 0.0
   ) => {
     try {

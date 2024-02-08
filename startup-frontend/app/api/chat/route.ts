@@ -4,7 +4,7 @@ import OpenAI from 'openai'
 
 import { auth } from '@/auth'
 import { nanoid } from '@/lib/utils'
-import { generateAgentResponse } from '@/lib/agent'
+import { runConversation } from '@/lib/agent'
 
 export const runtime = 'edge'
 
@@ -18,8 +18,7 @@ export async function POST(req: Request) {
       status: 401
     })
   }
-
-  const completion = await generateAgentResponse(messages)
+  const completion = await runConversation(messages)
 
   const stream = OpenAIStream(completion, {
     async onCompletion(completion) {

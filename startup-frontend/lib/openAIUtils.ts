@@ -16,13 +16,16 @@ export const getEmbedding = async (text: string): Promise<number[]> => {
 
 export const createChatCompletion = async (
   messages: any[],
+  tools: any,
   model: string = 'gpt-3.5-turbo-0125',
   temperature: number = 0.7
 ) => {
   return await openai.chat.completions.create({
-    model,
-    messages,
     temperature,
+    model,
+    messages: messages,
+    tools: tools,
+    tool_choice: 'auto',
     stream: true
   })
 }
