@@ -45,10 +45,13 @@ const tools: ChatCompletionTool[] = [
     }
   }
 ]
-const matchChunk = async (args: Record<string, unknown>) => {
-  const topK = 3
-
-  const query: string = args['query']
+const matchChunk = async ({
+  query,
+  topK = 3
+}: {
+  query: string
+  topK: number
+}) => {
   const supabase = getSupabase()
   const embedding = await getEmbedding(query)
   const chunks = await supabase.matchChunk(embedding, topK)
@@ -114,6 +117,7 @@ async function runConversation(
       const finalMessages = [...messages, ...appendToolCallMessage()]
       const secondResponse = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo-0125',
+        // @ts-ignore
         messages: finalMessages,
         stream: true
       }) // get a new response from the model where it can see the function response
