@@ -16,9 +16,10 @@ export function ChatList({ messages, data }: ChatList) {
   return (
     <div className="relative mx-auto max-w-2xl px-4">
       {data &&
-        data.sources &&
-        data.sources.map((source: any, index: number) => (
-          <p key={index}>{source}</p>
+        data.map((item: any, index: number) => <p key={index}>{item.text}</p>)}
+      {data &&
+        data.map((item: any, index: number) => (
+          <p key={index}>{item.sources}</p>
         ))}
       {messages.map((message, index) => (
         <div key={index}>

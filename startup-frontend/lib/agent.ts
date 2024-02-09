@@ -58,13 +58,13 @@ const matchChunk = async ({
   const chunks = await supabase.matchChunk(embedding, 1)
   const content = chunks.map(chunk => chunk.content).join('\n')
   const urls: string[] = chunks.map(chunk => chunk.url)
-  return { content, source: urls }
+  return { content, sources: urls }
 }
 
 type AvailableFunctionsType = {
   [key: string]: (
     ...args: any[]
-  ) => Promise<{ content: string; source: string[] }>
+  ) => Promise<{ content: string; sources: string[] }>
 }
 const availableFunctions: AvailableFunctionsType = {
   matchChunk: matchChunk
@@ -107,8 +107,9 @@ async function runConversation(
         const tool_call_id = toolCall.id
         const functionToCall = availableFunctions[function_name]
         const tool_call_result = await functionToCall(functionArgs)
-        const { source, content } = tool_call_result
-        data.append({ sources: source.join(' ') })
+        const { sources, content } = tool_call_result
+        data.append({ text: 'chuj' })
+        data.append({ sources: sources.join(' ') })
         console.log('Logging functionToCall tool_call_result', tool_call_result)
         console.log('==================================')
         appendToolCallMessage({
