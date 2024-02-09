@@ -36,6 +36,7 @@ export function EmptyScreen({ setInput, append, id }: EmptyScreenProps) {
         <p className="leading-normal text-muted-foreground">
           Some of the things we can help you with:
         </p>
+
         <div className="mt-4 flex flex-col items-start space-y-2">
           {exampleMessages.map((message, index) => (
             <Button

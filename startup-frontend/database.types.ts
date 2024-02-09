@@ -137,14 +137,7 @@ export type Database = {
           top_k?: number
           match_threshold?: number
         }
-        Returns: {
-          content: string | null
-          document_id: number
-          embedding: string | null
-          id: number
-          order_index: number | null
-          title: string | null
-        }[]
+        Returns: Database["public"]["CompositeTypes"]["chunk_details"][]
       }
       match_chunk_within_document: {
         Args: {
@@ -218,7 +211,14 @@ export type Database = {
       [_ in never]: never
     }
     CompositeTypes: {
-      [_ in never]: never
+      chunk_details: {
+        content: string
+        order_index: number
+        title: string
+        url: string
+        summary: string
+        chunks_count: number
+      }
     }
   }
 }
