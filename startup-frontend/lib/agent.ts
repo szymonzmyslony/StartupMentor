@@ -10,6 +10,7 @@ import {
   experimental_StreamData
 } from 'ai'
 import OpenAI from 'openai'
+import { sleep } from 'openai/core'
 import {
   ChatCompletionMessageParam,
   ChatCompletionSystemMessageParam,
@@ -80,6 +81,11 @@ async function runConversation(
     apiKey: process.env.OPENAI_API_KEY
   })
   const data = new experimental_StreamData()
+
+  data.append({ text: 'Got your message, starting to extract' })
+
+  await new Promise(f => setTimeout(f, 1000))
+
   // Step 1: send the conversation and available functions to the model
   const response = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo-0125',
@@ -88,6 +94,9 @@ async function runConversation(
     stream: true,
     tool_choice: 'auto' //{ type: 'function', function: { name: 'matchChunk' } } // auto is default, but we'll be explicit
   })
+  await new Promise(f => setTimeout(f, 1000))
+  data.append({ text: 'Received response from frist endpoint' })
+
   let finalMessages: (
     | OpenAI.Chat.Completions.ChatCompletionMessageParam
     | CreateMessage
@@ -106,12 +115,17 @@ async function runConversation(
         const functionArgs = JSON.parse(toolCall.func.arguments)
         const tool_call_id = toolCall.id
         const functionToCall = availableFunctions[function_name]
+        await new Promise(f => setTimeout(f, 1000))
+
+        data.append({ text: `Calling ${function_name}` })
+        await new Promise(f => setTimeout(f, 1000))
+
         const tool_call_result = await functionToCall(functionArgs)
+
         const { sources, content } = tool_call_result
-        data.append({ text: 'chuj' })
-        data.append({ sources: sources.join(' ') })
-        console.log('Logging functionToCall tool_call_result', tool_call_result)
-        console.log('==================================')
+        const sourcesText = sources.join(' ')
+
+        data.append({ text: `Reviewed ${sourcesText}` })
         appendToolCallMessage({
           tool_call_id,
           function_name,
@@ -119,6 +133,9 @@ async function runConversation(
         })
       }
       finalMessages = [...messages, ...appendToolCallMessage()]
+      await new Promise(f => setTimeout(f, 1000))
+      data.append({ text: 'Calling GPT-3.5 with all of the tools retrieved' })
+
       const secondResponse = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo-0125',
         // @ts-ignore
@@ -127,6 +144,8 @@ async function runConversation(
         tools: tools,
         tool_choice: 'auto'
       }) // get a new response from the model where it can see the function response
+      await new Promise(f => setTimeout(f, 1000))
+      data.append({ text: 'Calling GPT-3.5 with all of the tools retrieved' })
       return secondResponse
     },
     onCompletion(completion) {
@@ -139,9 +158,6 @@ async function runConversation(
     // IMPORTANT! until this is stable, you must explicitly opt in to supporting streamData.
   })
 
-  data.append({
-    text: 'Hello, how are you?'
-  })
   return new StreamingTextResponse(stream, {}, data)
 }
 

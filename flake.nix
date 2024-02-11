@@ -19,7 +19,6 @@
           buildInputs = [
             pkgs.poetry
             pkgs.python3
-            pkgs.nodejs      # Include if Node.js is still needed for other tasks
             pkgs.bun         # Bun package directly from Nixpkgs
             pkgs.typescript  # Include if TypeScript is needed separately
           ];

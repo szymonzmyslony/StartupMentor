@@ -39,6 +39,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   const [previewTokenInput, setPreviewTokenInput] = useState(previewToken ?? '')
   const { data, messages, append, reload, stop, isLoading, input, setInput } =
     useChat({
+      api: 'http://127.0.0.1:8000/ask',
       initialMessages,
       id,
       body: {
@@ -48,6 +49,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       onResponse(response) {
         if (response.status === 401) {
           toast.error(response.statusText)
+          console.log(response.body)
         }
       },
       onFinish() {
@@ -62,7 +64,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
         {messages.length ? (
           <>
-            <ChatList data={data} messages={messages} />
+            <ChatList messages={messages} />
             <ChatScrollAnchor trackVisibility={isLoading} />
           </>
         ) : (
@@ -70,6 +72,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         )}
       </div>
       <ChatPanel
+        data={data}
         id={id}
         isLoading={isLoading}
         stop={stop}

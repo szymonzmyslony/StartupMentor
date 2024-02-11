@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     })
   }
   const onCompletion = async (completion: string) => {
-    console.log('In completion with completion string of ', completion)
+    // console.log('In completion with completion string of ', completion)
     const final_messages = [
       ...messages,
       {
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
         role: 'assistant'
       }
     ]
-    console.log('==================================\n\n')
+    // console.log('==================================\n\n')
 
     const title = json.messages[0].content.substring(0, 100)
     const id = json.id ?? nanoid()
@@ -42,11 +42,11 @@ export async function POST(req: Request) {
       path,
       messages: final_messages
     }
-    await kv.hmset(`chat:${id}`, payload)
-    await kv.zadd(`user:chat:${userId}`, {
-      score: createdAt,
-      member: `chat:${id}`
-    })
+    // await kv.hmset(`chat:${id}`, payload)
+    // await kv.zadd(`user:chat:${userId}`, {
+    //   score: createdAt,
+    //   member: `chat:${id}`
+    // })
   }
   return runConversation(messages, onCompletion)
 }
