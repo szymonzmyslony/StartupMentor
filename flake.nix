@@ -18,7 +18,9 @@
         devShell = pkgs.mkShell {
           buildInputs = [
             pkgs.poetry
+            pkgs.nodejs
             pkgs.python3
+            pkgs.graphviz
             pkgs.bun         # Bun package directly from Nixpkgs
             pkgs.typescript  # Include if TypeScript is needed separately
           ];

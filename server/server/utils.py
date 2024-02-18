@@ -1,10 +1,11 @@
 import json
 
 
-# transforms the chunk into a stream part compatible with the vercel/ai
+# # transforms the chunk into a stream part compatible with the vercel/ai
 def stream_chunk(chunk, type: str = "text"):
     code = get_stream_part_code(type)
     formatted_stream_part = f"{code}:{json.dumps(chunk, separators=(',', ':'))}\n"
+    print("formatted_stream_part", formatted_stream_part)
     return formatted_stream_part
 
 

@@ -46,7 +46,7 @@ export function ChatPanel({
       <div className="mx-auto sm:max-w-2xl sm:px-4">
         <div className="flex items-center justify-center h-12">
           {data && data.length > 0 && (
-            <StatusMessage text={data[data.length - 1].text} />
+            <StatusMessage text={data[data.length - 1]['text']} />
           )}
 
           {isLoading ? (

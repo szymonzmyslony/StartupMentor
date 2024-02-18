@@ -1,4 +1,5 @@
 from chunker.openai_utils import num_tokens_from_string
+import numpy as np
 from openai import OpenAI
 
 import os
@@ -6,7 +7,6 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -19,9 +19,6 @@ def get_indices_above_threshold(distances, breakpoint_percentile_threshold):
         i for i, x in enumerate(distances) if x > breakpoint_distance_threshold
     ]  # The indices of those breakpoints on your list
     return indices_above_thresh
-
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def get_embedding(text, model="text-embedding-3-small"):

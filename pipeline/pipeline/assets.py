@@ -1,6 +1,11 @@
 import json
 import os
 import re
+
+from instructor import Maybe
+import instructor
+from openai import OpenAI
+from pydantic import BaseModel, Field
 from chunker.DocumentChunker import DocumentChunker
 from pipeline.SupabasePipeline import SupabaseDocumentInserter
 import requests
@@ -15,12 +20,15 @@ import re
 import numpy as np
 from yaml import DocumentEndEvent
 from .file_utils import save_documents_to_files
+from dotenv import load_dotenv
 
 # from chunker.DocumentChunker import DocumentChunker
 from pipeline.utils import extract_manual_docs
 from .video_scraper import get_transcript
 from .blog_scraper import extract_article_to_json, parse_md_into_string
 from .data_utils import sort_yc_links
+
+load_dotenv()
 
 
 @asset
@@ -338,25 +346,6 @@ def docs_for_embeddings(
     max_combined_length = float(np.max(combined_chunk_lengths))
     min_combined_length = float(np.min(combined_chunk_lengths))
 
-    # Collect lengths of all video chunks
-    # video_chunk_lengths = [
-    #     len(chunk[0])
-    #     for doc in combined_and_cleaned_video_docs
-    #     for chunk in doc["transcript"]
-    # # ]
-    # sum_video = float(np.sum(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    # # # Calculate average length of video chunks using numpy and convert to Python float
-    # avg_video_length = (
-    #     float(np.average(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    # )
-    # max_video_length = (
-    #     float(np.max(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    # )
-    # min_video_length = (
-    #     float(np.min(video_chunk_lengths)) if video_chunk_lengths else 0.0
-    # )
-    # # Initialize variables to keep track of the maximum and minimum lengths and the corresponding chunks
-
     max_length = 0
     max_chunk = None
     min_length = float("inf")  # Set initial min_length to infinity for comparison
@@ -420,21 +409,175 @@ key: str = (
 
 
 @asset
-def embed_and_save_docs(context: AssetExecutionContext, docs_for_embeddings) -> List:
+def summarize_chunks(context: AssetExecutionContext, docs_for_embeddings) -> List:
+    def generate_summary(title, text: str):
+
+        class Summary(BaseModel):
+            """Class representing a summary of a doc"""
+
+            key_question: list[str] = Field(
+                ...,
+                description="Key questions that the document chunk answers. At least 1, max 3",
+            )
+            key_points: list[str] = Field(
+                ...,
+                description="Key points for the document chunk. Should include general advice and examples.",
+            )
+
+        client = instructor.patch(OpenAI())
+
+        prompt = (
+            "Summarize the key points and generate questions that this advice answers. "
+            "Use simple language and be concise. Avoid using any personal names, including those present in the document."
+        )
+        message_content = (
+            f"Chunk content: {text}"
+            if title == ""
+            else f"Title: {title}, Chunk content: {text}"
+        )
+
+        return client.chat.completions.create(
+            model="gpt-4-1106-preview",
+            response_model=Summary,
+            messages=[
+                {"role": "system", "content": prompt},
+                {
+                    "role": "user",
+                    "content": message_content,
+                },
+            ],
+        )
+
+    summarized_docs = []  # Initialize a list to hold the documents with their summaries
+
+    for doc in docs_for_embeddings:
+        # Assuming 'doc' is a dictionary that may contain 'title' and 'description' keys
+        title = doc.get("title") if isinstance(doc.get("title"), str) else ""
+        description = (
+            doc.get("description") if isinstance(doc.get("description"), str) else ""
+        )
+        document_title = f"{title}, {description}".strip(", ")
+
+        content = doc["content"]
+
+        summaries = (
+            []
+        )  # Initialize a list to hold summaries for each chunk of the document
+        for chunk in content:
+            text = chunk[0].replace("\n", " ")  # Prepare the chunk text
+            summary = generate_summary(document_title, text)
+            summaries.append(
+                {
+                    "key_points": summary.key_points,
+                    "key_questions": summary.key_question,
+                }
+            )
+
+        # Append the original document with its summaries to the summarized_docs list
+        summarized_doc = {
+            **doc,  # Include all original document data
+            "summaries": summaries,  # Add the new summaries
+        }
+        summarized_docs.append(summarized_doc)
+    context.add_output_metadata(
+        metadata={"length": len(summarized_docs), "sample": summarized_docs[:5]}
+    )
+    return summarized_docs
+
+
+@asset
+def summarize_docs(context: AssetExecutionContext, summarize_chunks) -> List:
+    errors = []
+    summarized_docs = []  # Initialize a list to hold the documents with their summaries
+
+    def generate_summary(title: str, key_points: str, key_questions: str):
+
+        class Summary(BaseModel):
+            """Class representing a summary of a doc"""
+
+            key_questions: list[str] = Field(
+                ...,
+                description="Key questions that the document. At least 1, max 5",
+            )
+            key_points: list[str] = Field(
+                ...,
+                description="Key points for the document. Should include general advice and examples.",
+            )
+
+        client = instructor.patch(OpenAI())
+
+        prompt = (
+            "You will receive key points and questions for multiple chunks in a single document"
+            "Generate simple and concise summary and questions for the whole document. Include real-world examples and first principles"
+            "Use simple language and be concise. Avoid using any personal names, including those present in the document."
+        )
+        key_prompts = (
+            f"Chunks key points: {key_points} Chunk questions: {key_questions}"
+        )
+        message_content = (
+            key_prompts if title == "" else f"Title: {title}, {key_prompts}"
+        )
+
+        return client.chat.completions.create(
+            model="gpt-4-1106-preview",
+            response_model=Summary,
+            max_retries=3,
+            messages=[
+                {"role": "system", "content": prompt},
+                {
+                    "role": "user",
+                    "content": message_content,
+                },
+            ],
+        )
+
+    for doc in summarize_chunks:
+        # Assuming 'doc' is a dictionary that may contain 'title' and 'description' keys
+        title = doc.get("title") if isinstance(doc.get("title"), str) else ""
+        description = (
+            doc.get("description") if isinstance(doc.get("description"), str) else ""
+        )
+        document_title = f"{title}, {description}".strip(", ")
+
+        summaries = doc["summaries"]
+
+        key_questions = [("\n").join(summary["key_questions"]) for summary in summaries]
+        key_points = [("\n").join(summary["key_points"]) for summary in summaries]
+
+        key_questions = ("\n").join(key_questions)
+        key_points = ("\n").join(key_points)
+
+        generated = generate_summary(document_title, key_points, key_questions)
+
+        content = doc["content"]
+
+        zipped_data = [
+            [chunk, original_title, summary["key_points"], summary["key_questions"]]
+            for (chunk, original_title), summary in zip(content, summaries)
+        ]
+
+        # Append the original document with its summaries to the summarized_docs list
+        summarized_doc = {
+            **doc,  # Include all original document data
+            "key_points": generated.key_points,  # Add the new summaries
+            "content": zipped_data,
+            "key_questions": generated.key_questions,
+        }
+
+        summarized_docs.append(summarized_doc)
+    context.add_output_metadata(
+        metadata={"length": len(summarized_docs), "sample": summarized_docs[:1]}
+    )
+    return summarized_docs
+
+
+@asset
+def embed_and_save_docs(context: AssetExecutionContext, summarize_docs) -> List:
     inserter = SupabaseDocumentInserter(url, key)
     errors = []
 
-    for index, doc in enumerate(docs_for_embeddings):
+    for index, doc in enumerate(summarize_docs):
         inserter.insert_doc_with_chunks(doc, context.log.info)
 
-        # try:
-        #     # inserter.insert_doc_with_chunks(doc, context.log.info)
-        # except Exception as e:
-        # Log the error using your context's logging mechanism
-        # context.log.error(
-        #     f"Error processing document {doc.get('title', 'Unknown')}: {str(e)}"
-        # )
-        # Add error details to the errors list
-        # errors.append({"error": str(e)})
     context.add_output_metadata(metadata={"errors": errors})
     return errors

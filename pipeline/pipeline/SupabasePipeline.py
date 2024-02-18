@@ -42,7 +42,17 @@ class SupabaseDocumentInserter:
             all_embeddings.extend(batch_embeddings)
         return all_embeddings
 
-    def insert_document(self, title, summary, url, meta, embedding, logger=print):
+    def insert_document(
+        self,
+        title,
+        summary,
+        url,
+        meta,
+        embedding,
+        key_points,
+        key_questions,
+        logger=print,
+    ):
         data = (
             self.supabase.table("documents")
             .insert(
@@ -52,13 +62,15 @@ class SupabaseDocumentInserter:
                     "url": url,
                     "meta": meta,
                     "embedding": embedding,
+                    "key_points": key_points,
+                    "key_questions": key_questions,
                 }
             )
             .execute()
         )
         return data
 
-    def insert_document_with_embedding(self, doc, logger=print):
+    def insert_document_with_embedding(self, doc, errors, logger=print):
         title = doc["title"]
         description = doc["description"]
         document_text = ""
@@ -82,6 +94,8 @@ class SupabaseDocumentInserter:
             meta={},
             embedding=document_embedding,
             logger=logger,
+            key_points=doc["key_points"],
+            key_questions=doc["key_questions"],
         )
 
         document_id = document_data.data[0]["id"]
@@ -96,6 +110,8 @@ class SupabaseDocumentInserter:
         for index, item in enumerate(chunks):
             text = item[0]
             title = item[1]
+            key_points = item[2]
+            key_questions = item[3]
             chunk_embedding = (
                 chunk_embeddings[index] if index < len(chunk_embeddings) else None
             )
@@ -110,6 +126,8 @@ class SupabaseDocumentInserter:
                     "content": text,
                     "order_index": index,
                     "embedding": chunk_embedding,
+                    "key_points": key_points,
+                    "key_questions": key_questions,
                 }
             )
 
@@ -130,11 +148,13 @@ class SupabaseDocumentInserter:
         content = doc["content"]
         texts = [item[0] for item in content]
         titles = [item[1] for item in content]
+        key_points = [item[2] for item in content]
+        key_questions = [item[3] for item in content]
         new_texts = list(map(lambda x: x.replace("\n", " "), texts))
         new_titles = list(
             map(lambda x: x.replace("\n", " ") if isstring(x) else "", titles)
         )
-        new_content = list(zip(new_texts, new_titles))
+        new_content = list(zip(new_texts, new_titles, key_points, key_questions))
         new_doc = {
             **doc,
             "title": new_title,

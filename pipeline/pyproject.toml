@@ -23,6 +23,7 @@ supabase = "^2.3.4"
 numpy = "^1.26.4"
 scipy = "^1.12.0"
 pandas = "^2.2.0"
+instructor = "^0.5.2"
 
 
 [tool.pyright]
