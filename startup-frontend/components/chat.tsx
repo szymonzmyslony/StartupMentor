@@ -22,6 +22,7 @@ import { Input } from './ui/input'
 import { toast } from 'react-hot-toast'
 import { usePathname, useRouter } from 'next/navigation'
 import { handler } from '@/app/stream-react-response/action'
+import { StatusMessage } from './StatusMessage'
 
 const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 export interface ChatProps extends React.ComponentProps<'div'> {
@@ -63,6 +64,10 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   return (
     <>
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
+        {data &&
+          data.map((item, index) => (
+            <StatusMessage key={index} text={item['text']} />
+          ))}
         {messages.length ? (
           <>
             <ChatList messages={messages} />

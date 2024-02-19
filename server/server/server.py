@@ -10,7 +10,7 @@ from utils import stream_chunk  # formats chunks for use with experimental_Strea
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI, OpenAI
 import json
 
 from dotenv import load_dotenv
@@ -32,7 +32,7 @@ app.add_middleware(
     ],  # this is needed for streaming data header to be read by the client
 )
 
-client = AsyncOpenAI()
+client = OpenAI()
 
 
 def process_single_chunks_retieval(query, chunks):
@@ -127,37 +127,49 @@ async def run_conversation(messages):
     yield "making first request", "data"
 
     response = query_rewrite(messages[0]["content"])
+    result = response.result
     if response is None:
         yield "No response", "text"
-    for result in response:
-        print(result)
-        if isinstance(result, QueryPlan):
-            yield f"need to make query with {result.query_graph[0].question}", "text"
+    if isinstance(result, QueryPlan):
+        yield f"need to make query with {result.query_graph[0].question}", "text"
 
-        elif isinstance(result, FollowUp):
-            yield result.question, "text"
-        yield "Finalized first request", "data"
+    elif isinstance(result, FollowUp):
+        yield result.question, "text"
+    yield "Finalized first request", "data"
+
+
+def simple_open_ai_call():
+    stream = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        stream=True,
+        messages=[
+            {
+                "role": "user",
+                "content": "Say hi to me",
+            },
+        ],
+    )
+    print(stream)
+
+    for chunk in stream:
+        print(chunk)
+        if chunk.choices[0].delta.content is not None:
+            print(chunk.choices[0].delta.content)
+            yield chunk.choices[0].delta.content
 
 
 @app.post("/ask")
 async def ask(req: dict):
-    print("Messages are")
-    messagges = req["messages"]
-    print(req["messages"])
 
-    async def generator(messagges):
+    def generator():
+        yield stream_chunk([{"text": "bar1"}], "data")
 
-        async for token, type in run_conversation(messagges):
-            if type == "data":
-                print(token)
-                yield stream_chunk([{"text": token}], "data")
-            else:
-                yield stream_chunk(
-                    token, "text"
-                )  # Yield tokens received from run_conversation
+        for g in simple_open_ai_call():
+            yield stream_chunk(g)
+        yield stream_chunk([{"text": "bar2"}], "data")
 
     return StreamingResponse(
-        generator(messagges),
+        generator(),
         media_type="text/event-stream",
         headers={"X-Experimental-Stream-Data": "true"},
     )

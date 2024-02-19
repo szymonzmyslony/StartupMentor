@@ -51,11 +51,10 @@ client = instructor.patch(OpenAI(), mode=instructor.Mode.TOOLS)
 
 def query_rewrite(user_query: str):
 
-    response: Iterable[FirstResponse] = client.chat.completions.create(
+    response: FirstResponse = client.chat.completions.create(
         model="gpt-4-0125-preview",
-        response_model=Iterable[FirstResponse],
+        response_model=FirstResponse,
         max_retries=3,
-        stream=True,
         messages=[
             {
                 "role": "system",
