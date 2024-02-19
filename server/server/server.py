@@ -127,15 +127,16 @@ async def run_conversation(messages):
     yield "making first request", "data"
 
     response = query_rewrite(messages[0]["content"])
-    result = response.result
-    print("we got result", result)
+    if response is None:
+        yield "No response", "text"
+    for result in response:
+        print(result)
+        if isinstance(result, QueryPlan):
+            yield f"need to make query with {result.query_graph[0].question}", "text"
 
-    if isinstance(result, QueryPlan):
-        yield f"need to make query with {result.query_graph[0].question}", "text"
-
-    elif isinstance(result, FollowUp):
-        yield result.question, "text"
-    yield "Finalized first request", "data"
+        elif isinstance(result, FollowUp):
+            yield result.question, "text"
+        yield "Finalized first request", "data"
 
 
 @app.post("/ask")

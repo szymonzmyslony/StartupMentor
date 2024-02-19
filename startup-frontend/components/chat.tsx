@@ -21,6 +21,7 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { toast } from 'react-hot-toast'
 import { usePathname, useRouter } from 'next/navigation'
+import { handler } from '@/app/stream-react-response/action'
 
 const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 export interface ChatProps extends React.ComponentProps<'div'> {
@@ -39,7 +40,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   const [previewTokenInput, setPreviewTokenInput] = useState(previewToken ?? '')
   const { data, messages, append, reload, stop, isLoading, input, setInput } =
     useChat({
-      api: 'http://127.0.0.1:8000/ask',
+      api: handler,
       initialMessages,
       id,
       body: {

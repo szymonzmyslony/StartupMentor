@@ -1,9 +1,11 @@
-from typing import List
+from typing import Iterable, List
 from pydantic import Field, BaseModel
 from dotenv import load_dotenv
 import instructor
 from openai import OpenAI
 import asyncio
+
+from regex import F
 
 load_dotenv()
 
@@ -38,28 +40,26 @@ class FollowUp(BaseModel):
     )
 
 
-firstResponseType = QueryPlan | FollowUp
-
-
 class FirstResponse(BaseModel):
     """First response from the AI assistant."""
 
     result: QueryPlan | FollowUp
 
 
-client = instructor.patch(OpenAI())
+client = instructor.patch(OpenAI(), mode=instructor.Mode.TOOLS)
 
 
 def query_rewrite(user_query: str):
 
-    response: FirstResponse = client.chat.completions.create(
+    response: Iterable[FirstResponse] = client.chat.completions.create(
         model="gpt-4-0125-preview",
-        response_model=FirstResponse,
+        response_model=Iterable[FirstResponse],
         max_retries=3,
+        stream=True,
         messages=[
             {
                 "role": "system",
-                "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then, decide whether you have enough context create a query plan for the question. Otherwise, ask for more information.",
+                "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then ask any nesssary follow up questions to get a clear and concise answer as well as return the query plan.",
             },
             {"role": "user", "content": user_query},
         ],

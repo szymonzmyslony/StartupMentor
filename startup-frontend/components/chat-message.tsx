@@ -76,6 +76,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
           >
             {message.content}
           </MemoizedReactMarkdown>
+          {message.ui}
           <ChatMessageActions message={message} />
         </div>
       ) : (

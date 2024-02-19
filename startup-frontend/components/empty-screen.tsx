@@ -45,12 +45,6 @@ export function EmptyScreen({ setInput, append, id }: EmptyScreenProps) {
               className="h-auto p-0 text-base"
               onClick={async () => {
                 setInput(message.message)
-                await append({
-                  id,
-                  content: message.message,
-                  role: 'user'
-                })
-                setInput('')
               }}
             >
               <IconArrowRight className="mr-2 text-muted-foreground" />
