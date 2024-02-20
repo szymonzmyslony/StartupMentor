@@ -1,5 +1,6 @@
 import asyncio
 import os
+import re
 import time
 from typing import List
 
@@ -16,6 +17,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from openai import AsyncOpenAI, OpenAI
+from openai.types.chat import ChatCompletionMessageParam, ChatCompletionToolParam
 import json
 
 from dotenv import load_dotenv
@@ -126,54 +128,53 @@ tools = [
 ]
 # Convert the tools list of dictionaries to a list of ChatCompletionToolParam objects
 
-
-def query_rewrite(user_query: str):
-    client = instructor.patch(OpenAI())
-
-    response: FirstResponse = client.chat.completions.create(
-        model="gpt-4-0125-preview",
-        response_model=FirstResponse,
-        stream=True,
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then ask any nesssary follow up questions to get a clear and concise answer as well as return the query plan.",
-            },
-            {"role": "user", "content": user_query},
-        ],
-    )
-    result = response.result
-    if isinstance(result, FollowUp):
-        return result.question
-    elif isinstance(result, QueryPlan):
-        return result.query_graph[0].question
-    yield response
+system_message: ChatCompletionMessageParam = {
+    "role": "system",
+    "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then ask any nesssary follow up questions to get a clear and concise answer as well as return the query plan.",
+}
 
 
-def simple_open_ai_call():
+# def query_rewrite(messages: List[ChatCompletionMessageParam]):
+#     client = instructor.patch(OpenAI())
+#     newMessages = [system_message] + messages
+#     yield "calling instructor", "function_call"
+
+#     response: FirstResponse = client.chat.completions.create(
+#         response_format=First
+#         model="gpt-3.5-0125", stream=True, messages=newMessages
+#     )
+
+#     result = response.result
+#     if isinstance(result, FollowUp):
+#         yield result.question
+#     elif isinstance(result, QueryPlan):
+#         yield result.query_graph[0].question
+#     yield response
+
+
+def simple_open_ai_call(messages):
+    # newMessages = [system_message] + messages
+    yield "Making ai call", "data"
+
     stream = client.chat.completions.create(
-        model="gpt-3.5-turbo",
-        stream=True,
-        messages=[
-            {
-                "role": "user",
-                "content": "say hi to me",
-            },
-        ],
+        model="gpt-3.5-turbo", stream=True, messages=messages
     )
-
     for chunk in stream:
         if chunk.choices[0].delta.content is not None:
             print(chunk.choices[0].delta.content)
-            yield chunk.choices[0].delta.content
+            yield chunk.choices[0].delta.content, "text"
 
 
 @app.post("/ask")
 async def ask(req: dict):
+    messages: List[ChatCompletionMessageParam] = req.get("messages")  # type: ignore
 
     def generator():
-        for response in simple_open_ai_call():
-            yield streamSse(response)
+        for response, type in simple_open_ai_call(messages):
+            if type != "text":
+                yield streamSse(response, type)
+            else:
+                yield streamSse(response)
 
     return StreamingResponse(
         generator(),

@@ -2,11 +2,13 @@ import json
 
 
 def streamSse(chunk, type: str = "text"):
+    print("type", type)
 
     if type == "text":
         return f"data: {json.dumps({'event': 'text', 'value': chunk})}\n\n"
     x_chunk = json.dumps([{"text": chunk}])
-    return f"data: {json.dumps({'event': type, 'value': x_chunk})}\n\n"
+    print("x_chunk", x_chunk)
+    return f"data: {json.dumps({'event': 'data', 'value': x_chunk})}\n\n"
 
 
 # # transforms the chunk into a stream part compatible with the vercel/ai

@@ -10,8 +10,7 @@ function mentorParser(): AIStreamParser {
       const Parsedtext = JSON.stringify(text)
       const formattedText = `0:${Parsedtext}\n`
       return formattedText
-    }
-    if (json.event === 'data') {
+    } else {
       const x_data = json.value
       return `2: ${x_data}\n`
     }
