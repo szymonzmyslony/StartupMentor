@@ -2,8 +2,10 @@ import asyncio
 import os
 import time
 from typing import List
+
+import instructor
 from embeddigs import embedding_request
-from query_rewrite import FollowUp, QueryPlan, query_rewrite
+from query_rewrite import FirstResponse, FollowUp, QueryPlan
 
 from supabase_utils import get_supabase
 from utils import stream_chunk  # formats chunks for use with experimental_StreamData
@@ -122,20 +124,28 @@ tools = [
 # Convert the tools list of dictionaries to a list of ChatCompletionToolParam objects
 
 
-async def run_conversation(messages):
-    # Step 1: send the conversation and available functions to the model
-    yield "making first request", "data"
+def query_rewrite(user_query: str):
+    client = instructor.patch(OpenAI())
 
-    response = query_rewrite(messages[0]["content"])
+    response: FirstResponse = client.chat.completions.create(
+        model="gpt-4-0125-preview",
+        response_model=instructor.Partial[FirstResponse],
+        max_retries=3,
+        stream=True,
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then ask any nesssary follow up questions to get a clear and concise answer as well as return the query plan.",
+            },
+            {"role": "user", "content": user_query},
+        ],
+    )
     result = response.result
-    if response is None:
-        yield "No response", "text"
-    if isinstance(result, QueryPlan):
-        yield f"need to make query with {result.query_graph[0].question}", "text"
-
-    elif isinstance(result, FollowUp):
-        yield result.question, "text"
-    yield "Finalized first request", "data"
+    if isinstance(result, FollowUp):
+        return result.question
+    elif isinstance(result, QueryPlan):
+        return result.query_graph[0].question
+    yield response
 
 
 def simple_open_ai_call():

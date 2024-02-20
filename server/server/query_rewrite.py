@@ -44,23 +44,3 @@ class FirstResponse(BaseModel):
     """First response from the AI assistant."""
 
     result: QueryPlan | FollowUp
-
-
-client = instructor.patch(OpenAI(), mode=instructor.Mode.TOOLS)
-
-
-def query_rewrite(user_query: str):
-
-    response: FirstResponse = client.chat.completions.create(
-        model="gpt-4-0125-preview",
-        response_model=FirstResponse,
-        max_retries=3,
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then ask any nesssary follow up questions to get a clear and concise answer as well as return the query plan.",
-            },
-            {"role": "user", "content": user_query},
-        ],
-    )
-    return response
