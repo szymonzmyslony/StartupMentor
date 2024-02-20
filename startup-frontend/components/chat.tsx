@@ -64,11 +64,6 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
   return (
     <>
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
-        {data &&
-          data.map((item, index) => (
-            // @ts-ignore
-            <StatusMessage key={index} text={item?.['text'] as string} />
-          ))}
         {messages.length ? (
           <>
             <ChatList messages={messages} />
