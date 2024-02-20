@@ -11,37 +11,8 @@ import {
 } from 'ai'
 import { StatusMessage } from '@/components/StatusMessage'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!
-})
 const data = {
   messages: [{ role: 'user', content: 'How do i start a startup?' }]
-}
-
-function wrapStreamWithCompletion(
-  originalStream: ReadableStream<any>,
-  onComplete: () => Promise<void>
-) {
-  const reader = originalStream.getReader()
-
-  return new ReadableStream({
-    async pull(controller) {
-      const { done, value } = await reader.read()
-      if (done) {
-        // When the stream is finished, call the onComplete callback
-        onComplete()
-        // Close the controller to finish the ReadableStream
-        controller.close()
-        return
-      }
-      // Enqueue the chunk so it can be read from the new stream
-      controller.enqueue(value)
-    },
-    cancel() {
-      // If the stream is cancelled, we should also call the onComplete callback
-      onComplete()
-    }
-  })
 }
 
 export async function handler({ messages }: { messages: Message[] }) {
@@ -56,13 +27,20 @@ export async function handler({ messages }: { messages: Message[] }) {
 
   const x_data = new experimental_StreamData()
 
-  const textStream = fetchResponse.body
-
-  if (!textStream) {
-    throw new Error('Failed to connect to the server')
-  }
-  const aiStream = wrapStreamWithCompletion(textStream, async () => {
-    x_data.close()
+  const aiStream = AIStream(fetchResponse, parseMyPythonStream(), {
+    onStart: async () => {
+      console.log('Stream started')
+    },
+    onCompletion: async completion => {
+      console.log('Completion completed', completion)
+      x_data.close()
+    },
+    onFinal: async completion => {
+      console.log('Stream completed', completion)
+    }
+    // onToken: async token => {
+    //   console.log('Token received', token)
+    // }
   })
 
   return new experimental_StreamingReactResponse(aiStream, {
@@ -79,4 +57,21 @@ export async function handler({ messages }: { messages: Message[] }) {
     },
     data: x_data
   })
+}
+
+function parseMyPythonStream(): AIStreamParser {
+  return data => {
+    const json = JSON.parse(data)
+
+    if (json.event === 'text') {
+      const text = json.value
+      const Parsedtext = JSON.stringify(text)
+      const formattedText = `0:${Parsedtext}\n`
+      return formattedText
+    }
+    if (json.event === 'data') {
+      const x_data = json.value
+      return `2: ${x_data}\n`
+    }
+  }
 }

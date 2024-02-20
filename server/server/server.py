@@ -8,7 +8,10 @@ from embeddigs import embedding_request
 from query_rewrite import FirstResponse, FollowUp, QueryPlan
 
 from supabase_utils import get_supabase
-from utils import stream_chunk  # formats chunks for use with experimental_StreamData
+from utils import (
+    stream_chunk,
+    streamSse,
+)  # formats chunks for use with experimental_StreamData
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -129,8 +132,7 @@ def query_rewrite(user_query: str):
 
     response: FirstResponse = client.chat.completions.create(
         model="gpt-4-0125-preview",
-        response_model=instructor.Partial[FirstResponse],
-        max_retries=3,
+        response_model=FirstResponse,
         stream=True,
         messages=[
             {
@@ -155,14 +157,12 @@ def simple_open_ai_call():
         messages=[
             {
                 "role": "user",
-                "content": "Say hi to me",
+                "content": "say hi to me",
             },
         ],
     )
-    print(stream)
 
     for chunk in stream:
-        print(chunk)
         if chunk.choices[0].delta.content is not None:
             print(chunk.choices[0].delta.content)
             yield chunk.choices[0].delta.content
@@ -172,11 +172,8 @@ def simple_open_ai_call():
 async def ask(req: dict):
 
     def generator():
-        yield stream_chunk([{"text": "bar1"}], "data")
-
-        for g in simple_open_ai_call():
-            yield stream_chunk(g)
-        yield stream_chunk([{"text": "bar2"}], "data")
+        for response in simple_open_ai_call():
+            yield streamSse(response)
 
     return StreamingResponse(
         generator(),
