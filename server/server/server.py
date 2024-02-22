@@ -3,8 +3,8 @@ import os
 import re
 import time
 from typing import List
-
 import instructor
+from crew import agent_request
 from embeddigs import embedding_request
 from query_rewrite import FirstResponse, FollowUp, QueryPlan
 
@@ -42,14 +42,6 @@ app.add_middleware(
 client = OpenAI()
 
 
-def process_single_chunks_retieval(query, chunks):
-    print("Chunk are", chunks)
-    content = "\n".join([chunk["content"] for chunk in chunks])
-    urls: List[str] = [chunk["url"] for chunk in chunks]
-    content = f'Content for query "{query}":\n{content}\n'
-    return {"content": content, "sources": urls}
-
-
 async def matchChunksWithinDocument(document_id: int, query: str, topK: int = 3):
     supabase = get_supabase()
     query_embedding = list(map(lambda x: x.embedding, embedding_request([query])))[0]
@@ -77,23 +69,6 @@ async def matchDocument(query: str, topK: int = 3):
 
     result = await supabase.match_document(query_embedding, top_k=2)
     return result
-
-
-async def matchChunks(queries: List[str], topK: int):
-    supabase = get_supabase()
-    query_embeddings = list(map(lambda x: x.embedding, embedding_request(queries)))
-
-    result = await supabase.match_chunks(query_embeddings, top_k=2)
-
-    mapped_result = [
-        process_single_chunks_retieval(queries[i], result[i]["chunk_details"])
-        for i in range(len(queries))
-    ]
-    content = "\n".join([x["content"] for x in mapped_result])
-    urls: list[str] = [source for x in mapped_result for source in x["sources"]]
-
-    print("retrieved urls", list(set(urls)))
-    return {"content": content, "sources": list(set(urls))}
 
 
 system_message_query_breaking = {
@@ -126,7 +101,6 @@ tools = [
         },
     }
 ]
-# Convert the tools list of dictionaries to a list of ChatCompletionToolParam objects
 
 system_message: ChatCompletionMessageParam = {
     "role": "system",
@@ -152,29 +126,21 @@ system_message: ChatCompletionMessageParam = {
 #     yield response
 
 
-def simple_open_ai_call(messages):
-    # newMessages = [system_message] + messages
-    yield "Making ai call", "data"
-
-    stream = client.chat.completions.create(
-        model="gpt-3.5-turbo", stream=True, messages=messages
-    )
-    for chunk in stream:
-        if chunk.choices[0].delta.content is not None:
-            print(chunk.choices[0].delta.content)
-            yield chunk.choices[0].delta.content, "text"
-
-
 @app.post("/ask")
 async def ask(req: dict):
     messages: List[ChatCompletionMessageParam] = req.get("messages")  # type: ignore
 
     def generator():
-        for response, type in simple_open_ai_call(messages):
-            if type != "text":
-                yield streamSse(response, type)
-            else:
-                yield streamSse(response)
+        try:
+
+            # Use 'async for' to iterate over the generator's yielded values
+            for response in agent_request(messages):
+                # Process each response as it's yielded
+                yield streamSse(response)  # or any other processing you need
+
+        except Exception as e:
+            # Handle any exceptions that might occur
+            print(f"An error occurred: {e}")
 
     return StreamingResponse(
         generator(),

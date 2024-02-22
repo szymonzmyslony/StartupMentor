@@ -2,12 +2,11 @@ import json
 
 
 def streamSse(chunk, type: str = "text"):
-    print("type", type)
+    print("Trying to stram", chunk, type)
 
     if type == "text":
         return f"data: {json.dumps({'event': 'text', 'value': chunk})}\n\n"
     x_chunk = json.dumps([{"text": chunk}])
-    print("x_chunk", x_chunk)
     return f"data: {json.dumps({'event': 'data', 'value': x_chunk})}\n\n"
 
 
@@ -15,7 +14,6 @@ def streamSse(chunk, type: str = "text"):
 def stream_chunk(chunk, type: str = "text"):
     code = get_stream_part_code(type)
     formatted_stream_part = f"{code}:{json.dumps(chunk, separators=(',', ':'))}\n"
-    print("formatted_stream_part", formatted_stream_part)
     return formatted_stream_part
 
 
