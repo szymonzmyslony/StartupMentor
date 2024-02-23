@@ -10,8 +10,8 @@ from query_rewrite import FirstResponse, FollowUp, QueryPlan
 
 from supabase_utils import get_supabase
 from utils import (
-    stream_chunk,
     streamSse,
+    yield_in_thread,
 )  # formats chunks for use with experimental_StreamData
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -71,61 +71,6 @@ async def matchDocument(query: str, topK: int = 3):
     return result
 
 
-system_message_query_breaking = {
-    "role": "system",
-    "content": "You are a top-tier query planner and startup mentor combined. Your task is to dissect founder questions into smaller, manageable queries. Think step-by-step, breaking down complex questions to understand the core issues, first principles, real world examples, and solution/problem framewroks. Always use external tools to fetch aditional information. Make sure to understand the question and provide a clear and concise answer.",
-}
-tools = [
-    {
-        "type": "function",
-        "function": {
-            "name": "matchChunks",
-            "description": "Fetches relavant document chunks based on question",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "queries": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "minItems": 3,
-                        "maxItems": 10,
-                        "description": "Should be an array of strings.  Will document chunks from the database based on these queries. Those should be diverse and relevant to the question and range from first principle, real world examples to solution framework. ",
-                    },
-                    "topK": {
-                        "type": "number",
-                        "description": "How many chunks to retrieve",
-                    },
-                },
-                "required": ["query"],
-            },
-        },
-    }
-]
-
-system_message: ChatCompletionMessageParam = {
-    "role": "system",
-    "content": "You are a world renowned tech startup mentor. Your job is to contextualize founder question based on their background. Think step-by-step, breaking down complex questions to understand the core issues, and real world situations. Then ask any nesssary follow up questions to get a clear and concise answer as well as return the query plan.",
-}
-
-
-# def query_rewrite(messages: List[ChatCompletionMessageParam]):
-#     client = instructor.patch(OpenAI())
-#     newMessages = [system_message] + messages
-#     yield "calling instructor", "function_call"
-
-#     response: FirstResponse = client.chat.completions.create(
-#         response_format=First
-#         model="gpt-3.5-0125", stream=True, messages=newMessages
-#     )
-
-#     result = response.result
-#     if isinstance(result, FollowUp):
-#         yield result.question
-#     elif isinstance(result, QueryPlan):
-#         yield result.query_graph[0].question
-#     yield response
-
-
 @app.post("/ask")
 async def ask(req: dict):
     messages: List[ChatCompletionMessageParam] = req.get("messages")  # type: ignore
@@ -136,7 +81,7 @@ async def ask(req: dict):
             # Use 'async for' to iterate over the generator's yielded values
             for response in agent_request(messages):
                 # Process each response as it's yielded
-                yield streamSse(response)  # or any other processing you need
+                yield response
 
         except Exception as e:
             # Handle any exceptions that might occur

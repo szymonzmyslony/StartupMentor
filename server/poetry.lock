@@ -122,13 +122,13 @@ files = [
 
 [[package]]
 name = "anyio"
-version = "4.2.0"
+version = "4.3.0"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "anyio-4.2.0-py3-none-any.whl", hash = "sha256:745843b39e829e108e518c489b31dc757de7d2131d53fac32bd8df268227bfee"},
-    {file = "anyio-4.2.0.tar.gz", hash = "sha256:e1875bb4b4e2de1669f4bc7869b6d3f54231cdced71605e6e64c9be77e3be50f"},
+    {file = "anyio-4.3.0-py3-none-any.whl", hash = "sha256:048e05d0f6caeed70d731f3db756d35dcc1f35747c8c403364a8332c630441b8"},
+    {file = "anyio-4.3.0.tar.gz", hash = "sha256:f75253795a87df48568485fd18cdd2a3fa5c4f7c5be8e5e36637733fce06fed6"},
 ]
 
 [package.dependencies]
@@ -632,13 +632,13 @@ files = [
 
 [[package]]
 name = "httpcore"
-version = "1.0.2"
+version = "1.0.4"
 description = "A minimal low-level HTTP client."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "httpcore-1.0.2-py3-none-any.whl", hash = "sha256:096cc05bca73b8e459a1fc3dcf585148f63e534eae4339559c9b8a8d6399acc7"},
-    {file = "httpcore-1.0.2.tar.gz", hash = "sha256:9fc092e4799b26174648e54b74ed5f683132a464e95643b226e00c2ed2fa6535"},
+    {file = "httpcore-1.0.4-py3-none-any.whl", hash = "sha256:ac418c1db41bade2ad53ae2f3834a3a0f5ae76b56cf5aa497d2d033384fc7d73"},
+    {file = "httpcore-1.0.4.tar.gz", hash = "sha256:cb2839ccfcba0d2d3c1131d3c3e26dfc327326fbe7a5dc0dbfe9f6c9151bb022"},
 ]
 
 [package.dependencies]
@@ -649,7 +649,7 @@ h11 = ">=0.13,<0.15"
 asyncio = ["anyio (>=4.0,<5.0)"]
 http2 = ["h2 (>=3,<5)"]
 socks = ["socksio (==1.*)"]
-trio = ["trio (>=0.22.0,<0.23.0)"]
+trio = ["trio (>=0.22.0,<0.25.0)"]
 
 [[package]]
 name = "httptools"
@@ -800,13 +800,13 @@ files = [
 
 [[package]]
 name = "langchain"
-version = "0.1.8"
+version = "0.1.9"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
-    {file = "langchain-0.1.8-py3-none-any.whl", hash = "sha256:19e951b0e2be099ff048ee483acecb47e1a39c33a47dadfee70fcfa20f45cc19"},
-    {file = "langchain-0.1.8.tar.gz", hash = "sha256:c8b1c2954a07cd6422c9027459473bafae90c78f07015bf2fc6262fadf97ea44"},
+    {file = "langchain-0.1.9-py3-none-any.whl", hash = "sha256:1436a9f4e498bb9f8e01e0ab8d185771d49c0fc96b3d2da4d5bed5055015746f"},
+    {file = "langchain-0.1.9.tar.gz", hash = "sha256:da1f89aeaf5cbc225eb1d6523af0f273c062fdc40a76ec455486c3c184f741b1"},
 ]
 
 [package.dependencies]
@@ -814,7 +814,7 @@ aiohttp = ">=3.8.3,<4.0.0"
 dataclasses-json = ">=0.5.7,<0.7"
 jsonpatch = ">=1.33,<2.0"
 langchain-community = ">=0.0.21,<0.1"
-langchain-core = ">=0.1.24,<0.2"
+langchain-core = ">=0.1.26,<0.2"
 langsmith = ">=0.1.0,<0.2.0"
 numpy = ">=1,<2"
 pydantic = ">=1,<3"
@@ -839,19 +839,19 @@ text-helpers = ["chardet (>=5.1.0,<6.0.0)"]
 
 [[package]]
 name = "langchain-community"
-version = "0.0.21"
+version = "0.0.22"
 description = "Community contributed LangChain integrations."
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
-    {file = "langchain_community-0.0.21-py3-none-any.whl", hash = "sha256:120977485d244eb472ad3618a31222fe6c2bce08026f4caa96bd6dae2e316ac0"},
-    {file = "langchain_community-0.0.21.tar.gz", hash = "sha256:1c310a7e2663d5f6464a433981504894f97c12783cbeb8bdf4159a574f88c18d"},
+    {file = "langchain_community-0.0.22-py3-none-any.whl", hash = "sha256:719cb9e7874eaabf5df6b9d6d0e5dd54ba8ac16dead7925281017a36ee79a7f4"},
+    {file = "langchain_community-0.0.22.tar.gz", hash = "sha256:d9cb49373e77ea7454c7014a2c7a29e020020d19716e64a3c01b247c42789ba1"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 dataclasses-json = ">=0.5.7,<0.7"
-langchain-core = ">=0.1.24,<0.2"
+langchain-core = ">=0.1.26,<0.2"
 langsmith = ">=0.1.0,<0.2.0"
 numpy = ">=1,<2"
 PyYAML = ">=5.3"
@@ -865,13 +865,13 @@ extended-testing = ["aiosqlite (>=0.19.0,<0.20.0)", "aleph-alpha-client (>=2.15.
 
 [[package]]
 name = "langchain-core"
-version = "0.1.25"
+version = "0.1.26"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = ">=3.8.1,<4.0"
 files = [
-    {file = "langchain_core-0.1.25-py3-none-any.whl", hash = "sha256:ff0a0ad1ed877878e7b9c7601870cd12145abf3c814aae41995968d05ea6c09d"},
-    {file = "langchain_core-0.1.25.tar.gz", hash = "sha256:065ff8b4e383c5645d175b20ae44b258330ed06457b0fc0179efee310b6f2af6"},
+    {file = "langchain_core-0.1.26-py3-none-any.whl", hash = "sha256:4f54cd26c27473172d7a214a5507a4c0e3255c6d8c25d9087afdc967f5588516"},
+    {file = "langchain_core-0.1.26.tar.gz", hash = "sha256:6186758d62015723aac67ef1a2055695d03e82c4dd4074217975b0c62faf4b17"},
 ]
 
 [package.dependencies]
@@ -1824,13 +1824,13 @@ test = ["pylint", "pytest", "pytest-black", "pytest-cov", "pytest-pylint"]
 
 [[package]]
 name = "supabase"
-version = "2.3.4"
+version = "2.3.6"
 description = "Supabase client for Python."
 optional = false
 python-versions = ">=3.8,<4.0"
 files = [
-    {file = "supabase-2.3.4-py3-none-any.whl", hash = "sha256:976a0f1a21e103395e6c90086bade56aff40144f3e8a99e47a8da8ea0816025a"},
-    {file = "supabase-2.3.4.tar.gz", hash = "sha256:2a19b2de2bc1571213658cd1239c2f2b01ddc188e64afcbb9dd46336df4b817f"},
+    {file = "supabase-2.3.6-py3-none-any.whl", hash = "sha256:4288ba658c1c7f33ba3c232a6b9eae8b549ba3355ee8ff061bad9085e5d1326e"},
+    {file = "supabase-2.3.6.tar.gz", hash = "sha256:eb3c0d6f087b5da3b84a04da3430ee55a854d81f92f2bbc6c8b45fcf34be6f85"},
 ]
 
 [package.dependencies]
@@ -1923,13 +1923,13 @@ blobfile = ["blobfile (>=2)"]
 
 [[package]]
 name = "tqdm"
-version = "4.66.1"
+version = "4.66.2"
 description = "Fast, Extensible Progress Meter"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "tqdm-4.66.1-py3-none-any.whl", hash = "sha256:d302b3c5b53d47bce91fea46679d9c3c6508cf6332229aa1e7d8653723793386"},
-    {file = "tqdm-4.66.1.tar.gz", hash = "sha256:d88e651f9db8d8551a62556d3cff9e3034274ca5d66e93197cf2490e2dcb69c7"},
+    {file = "tqdm-4.66.2-py3-none-any.whl", hash = "sha256:1ee4f8a893eb9bef51c6e35730cebf234d5d0b6bd112b0271e10ed7c24a02bd9"},
+    {file = "tqdm-4.66.2.tar.gz", hash = "sha256:6cd52cdf0fef0e0f543299cfc96fec90d7b8a7e88745f411ec33eb44d5ed3531"},
 ]
 
 [package.dependencies]
@@ -2007,13 +2007,13 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "uvicorn"
-version = "0.27.0.post1"
+version = "0.27.1"
 description = "The lightning-fast ASGI server."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "uvicorn-0.27.0.post1-py3-none-any.whl", hash = "sha256:4b85ba02b8a20429b9b205d015cbeb788a12da527f731811b643fd739ef90d5f"},
-    {file = "uvicorn-0.27.0.post1.tar.gz", hash = "sha256:54898fcd80c13ff1cd28bf77b04ec9dbd8ff60c5259b499b4b12bb0917f22907"},
+    {file = "uvicorn-0.27.1-py3-none-any.whl", hash = "sha256:5c89da2f3895767472a35556e539fd59f7edbe9b1e9c0e1c99eebeadc61838e4"},
+    {file = "uvicorn-0.27.1.tar.gz", hash = "sha256:3d9a267296243532db80c83a959a3400502165ade2c1338dea4e67915fd4745a"},
 ]
 
 [package.dependencies]
