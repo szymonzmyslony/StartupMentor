@@ -58,6 +58,6 @@ async def matchChunks(queries: List[str], topK: int):
     return content
 
 
-def sync_match_chunks(queries: List[str], topK: int):
+def sync_match_chunks(queries: List[str], topK: int = 3):
     # This function will run the asynchronous matchChunks function synchronously
     return asyncio.run(matchChunks(queries, topK))

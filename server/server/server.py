@@ -1,24 +1,12 @@
-import asyncio
-import os
-import re
-import time
 from typing import List
-import instructor
 from crew import agent_request
 from embeddigs import embedding_request
-from query_rewrite import FirstResponse, FollowUp, QueryPlan
-
 from supabase_utils import get_supabase
-from utils import (
-    streamSse,
-    yield_in_thread,
-)  # formats chunks for use with experimental_StreamData
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from openai import AsyncOpenAI, OpenAI
+from openai import OpenAI
 from openai.types.chat import ChatCompletionMessageParam, ChatCompletionToolParam
-import json
 
 from dotenv import load_dotenv
 
@@ -90,5 +78,8 @@ async def ask(req: dict):
     return StreamingResponse(
         generator(),
         media_type="text/event-stream",
-        headers={"X-Experimental-Stream-Data": "true"},
+        headers={
+            "X-Experimental-Stream-Data": "true",
+            "X-sources": "test-chuj-ci-wdupe",
+        },
     )

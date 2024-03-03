@@ -5,6 +5,7 @@ import { ChatMessage } from '@/components/chat-message'
 
 export interface ChatList {
   messages: Message[]
+  setInput: any
 }
 
 export function ChatList({ messages }: ChatList) {

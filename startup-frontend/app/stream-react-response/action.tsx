@@ -11,8 +11,18 @@ import {
 } from 'ai'
 import { StatusMessage } from '@/components/StatusMessage'
 import mentorParser from './mentorParser'
+import { auth } from '@/auth'
 
 export async function handler({ messages }: { messages: Message[] }) {
+  const userId = (await auth())?.user.id
+  console.log('User ID:', userId)
+
+  if (!userId) {
+    return new Response('Unauthorized', {
+      status: 401
+    })
+  }
+
   const data = {
     messages
   }
@@ -25,6 +35,9 @@ export async function handler({ messages }: { messages: Message[] }) {
     },
     body: JSON.stringify(data)
   })
+  const headers = fetchResponse.headers
+
+  console.log('Headers:', headers)
 
   const x_data = new experimental_StreamData()
 
@@ -42,7 +55,6 @@ export async function handler({ messages }: { messages: Message[] }) {
 
   return new experimental_StreamingReactResponse(aiStream, {
     ui({ content, data }) {
-      console.log('Data:', data)
       return (
         <div className="italic text-red-800">
           {data &&

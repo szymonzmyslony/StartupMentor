@@ -6,18 +6,13 @@ import threading
 def streamSse(chunk, type: str = "text"):
     if type == "text":
         return f"data: {json.dumps({'event': 'text', 'value': chunk})}\n\n"
+    if type == "options":
+        x_chunk = json.dumps([{"options": chunk}])
+        return f"data: {json.dumps({'event': 'data', 'value': x_chunk})}\n\n"
 
     x_chunk = json.dumps([{"text": chunk}])
+
     return f"data: {json.dumps({'event': 'data', 'value': x_chunk})}\n\n"
-
-
-async def yield_in_thread(chunk, type="text"):
-    print("Trying to stream,", chunk)
-    loop = asyncio.get_running_loop()
-    # Run the synchronous function in a separate thread without blocking
-    # the asyncio event loop
-    result = await loop.run_in_executor(None, streamSse, chunk, type)
-    return result
 
 
 # # # transforms the chunk into a stream part compatible with the vercel/ai

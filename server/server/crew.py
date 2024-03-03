@@ -1,15 +1,15 @@
-import asyncio
-from asyncore import loop
-from concurrent.futures import ThreadPoolExecutor
-import json
-from typing import Generator
+from typing import AsyncGenerator, Generator, List
 from openai import OpenAI
 from tenacity import retry, sleep, stop_after_attempt, wait_random_exponential
-from query_rewrite import FollowUp, query_rewrite
-from summarize_data import summarize_startup_context
+from firstResponse import get_first_response
+from query_rewrite import FollowUp, get_first_answer, get_followUps
 from tools import matchChunks, sync_match_chunks, tools
 from utils import streamSse
-
+from openai.types.chat import (
+    ChatCompletionUserMessageParam,
+    ChatCompletionSystemMessageParam,
+    ChatCompletionMessageParam,
+)
 
 GPT_MODEL = "gpt-3.5-turbo-0125"
 
@@ -20,71 +20,96 @@ client = OpenAI()
 def agent_request(
     messages, functions=None, model=GPT_MODEL
 ) -> Generator[str, None, None]:
-    print("messages are:", messages)
+
     yield streamSse("Making first request", "data")
 
-    response = query_rewrite(messages)
+    startup_context = "Social commerce platform for farm2table based in London. Doing around 2k MRR and 15k of GMV."
+    founder_context = ""
 
-    result = response.result
+    response = get_first_answer(messages).result
 
-    yield streamSse("Received data from instructor", "data")
-
-    if isinstance(result, FollowUp):
-        yield streamSse(result.question, "text")
-
+    if isinstance(response, FollowUp):
+        question = response.question
+        yield streamSse(question, "text")
+        yield streamSse("Follow up question", "data")
         return
 
-    else:
-        queries = [query.question for query in result.query_graph]
-        yield streamSse("Fetching queries first message", "data")
+    queries = list(map(lambda x: x.question, response.query_graph))
 
-        fetched_data = sync_match_chunks(queries, 3)
+    print(
+        "Calling with queries",
+    )
 
-        response = summarize_startup_context(messages, fetched_data)
-        for r in response:
-            yield streamSse(r, "data")
-        return
+    result = sync_match_chunks(queries)
 
-    #     tool_calls = response_message.tool_calls
+    system_message: ChatCompletionSystemMessageParam = {
+        "role": "system",
+        "content": "You are a world-renowned tech startup mentor. Your job is to advise the founder on the startup they have. You should based your answers on first principles and give examples when possible. Consider founder's background, particular industry, and the stage of the startup. Use only provided context from YC combinator provide a clear and concise answer.",
+    }
 
-    #     # Step 2: check if the model wanted to call a function
-    #     if tool_calls:
-    #         # Step 3: call the function
-    #         # Note: the JSON response may not always be valid; be sure to handle errors
-    #         yield "Got some tools"
+    new_messages: List[ChatCompletionMessageParam] = [system_message] + messages
 
-    #         available_functions = {
-    #             "matchChunks": matchChunks,
-    #         }  # only one function in this example, but you can have multiple
-    #         messages.append(
-    #             response_message
-    #         )  # extend conversation with assistant's reply
-    #         # Step 4: send the info for each function call and function response to the model
-    #         for tool_call in tool_calls:
-    #             yield "Calling function"
-    #             function_name = tool_call.function.name
-    #             function_to_call = available_functions[function_name]
-    #             function_args = json.loads(tool_call.function.arguments)
+    new_messages[-1] = {
+        "role": "user",
+        "content": f'Start up context is {startup_context}, founder context is: {founder_context}. Founder question is: {new_messages[-1]["content"]}. YC combinator context is: {result}',
+    }
 
-    #             function_response = await function_to_call(**function_args)
+    second_response = client.chat.completions.create(
+        model="gpt-4-0125-preview", messages=new_messages, stream=True
+    )  # get a new response from the model where it can see the function response
+    for chunk in second_response:
+        if chunk.choices[0].delta.content is not None:
+            yield streamSse(chunk.choices[0].delta.content, "text")
 
-    #             yield "Got response from function, calling 2nd endpoint"
+    # if not tool_calls:
+    #     yield streamSse("No tools", "data")
+    #     yield streamSse(response_message.content, "text")
+    #     new_messages = messages + [
+    #         {
+    #             "role": "assistant",
+    #             "content": response_message.content,
+    #         }
+    #     ]
+    #     print("New messages are:", new_messages)
+    #     choices = get_followUps(new_messages)
+    #     for c in choices:
+    #         yield streamSse(c, "data")
+    #     return
+    # Step 2: check if the model wanted to call a function
+    # if tool_calls:
+    #     # Step 3: call the function
+    #     # Note: the JSON response may not always be valid; be sure to handle errors
+    #     yield streamSse("In toools ", "data")
 
-    #             messages.append(
-    #                 {
-    #                     "tool_call_id": tool_call.id,
-    #                     "role": "tool",
-    #                     "name": function_name,
-    #                     "content": function_response,
-    #                 }
-    #             )  # extend conversation with function response
-    #         second_response = client.chat.completions.create(
-    #             model="gpt-3.5-turbo-0125", messages=messages, stream=True
-    #         )  # get a new response from the model where it can see the function response
-    #         for chunk in second_response:
-    #             if chunk.choices[0].delta.content is not None:
-    #                 yield chunk.choices[0].delta.content
-    # except Exception as e:
-    #     print("Unable to generate ChatCompletion response")
-    #     print(f"Exception: {e}")
-    #     yield e
+    # available_functions = {
+    #     "matchChunks": sync_match_chunks,
+    # }  # only one function in this example, but you can have multiple
+    # new_messages.append(
+    #     response_message
+    # )  # extend conversation with assistant's reply
+    # # Step 4: send the info for each function call and function response to the model
+    # for tool_call in tool_calls:
+    #     yield streamSse("calling function", "data")
+    #     function_name = tool_call.function.name
+    #     function_to_call = available_functions[function_name]
+    #     function_args = json.loads(tool_call.function.arguments)
+
+    #     function_response = function_to_call(**function_args)
+
+    #     yield streamSse("Callled function", "data")
+
+    #     new_messages.append(
+    #         {
+    #             "tool_call_id": tool_call.id,
+    #             "role": "tool",
+    #             "name": function_name,
+    #             "content": function_response,
+    #         }
+    #     )  # extend conversation with function response
+    # print("Calling ifnal with", new_messages)
+    # second_response = client.chat.completions.create(
+    #     model="gpt-4-0125-preview", messages=new_messages, stream=True
+    # )  # get a new response from the model where it can see the function response
+    # for chunk in second_response:
+    #     if chunk.choices[0].delta.content is not None:
+    #         yield streamSse(chunk.choices[0].delta.content, "text")
