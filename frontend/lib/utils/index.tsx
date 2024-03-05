@@ -2,13 +2,16 @@ import {
   TAnyToolDefinitionArray,
   TToolDefinitionMap,
 } from "@/lib/utils/tool-definition";
-import { OpenAIStream, ToolCallPayload } from "ai";
+import { CreateMessage, OpenAIStream, ToolCallPayload } from "ai";
 import type OpenAI from "openai";
 import zodToJsonSchema from "zod-to-json-schema";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { z } from "zod";
-import { ChatCompletionTool } from "openai/resources/index.mjs";
+import {
+  ChatCompletionMessageParam,
+  ChatCompletionTool,
+} from "openai/resources/index.mjs";
 
 const consumeStream = async (stream: ReadableStream) => {
   const reader = stream.getReader();
@@ -44,7 +47,7 @@ export function runOpenAICompletion<
   let onFunctionCall = {} as any;
 
   const { functions, ...rest } = params;
-  const tools: ChatCompletionTool[] = functions.map((fn) => ({
+  const toolsMapping: ChatCompletionTool[] = functions.map((fn) => ({
     type: "function",
     function: {
       name: fn.name,
@@ -57,47 +60,38 @@ export function runOpenAICompletion<
     const response = await openai.chat.completions.create({
       ...rest,
       tool_choice: "auto",
-      tools: tools,
+      tools: toolsMapping,
       stream: true,
     });
+
+    let finalMessages: (ChatCompletionMessageParam | CreateMessage)[] = [];
 
     consumeStream(
       OpenAIStream(response, {
         onToken: (token) => {
           text += token;
           if (text.startsWith("{")) return;
+
           onTextContent(text, false);
         },
         experimental_onToolCall: async (
           tools: ToolCallPayload,
-          _appendToolCallMessage
+          appendToolCallMessage
         ) => {
           hasFunction = true;
           const toolCallPayload = tools.tools;
           for (const tool of toolCallPayload) {
-            const name = tool.func.name;
+            const function_name = tool.func.name;
             // @ts-ignore
             const args = JSON.parse(tool.func.arguments);
-            if (!onFunctionCall[name]) {
+            if (!onFunctionCall[function_name]) {
               return;
             }
-
-            // we need to convert arguments from z.input to z.output
-            // this is necessary if someone uses a .default in their schema
-            const zodSchema = functionsMap[name].parameters;
-
-            const parsedArgs = zodSchema.safeParse(args);
-
-            // if (!parsedArgs.success) {
-            //   throw new Error(
-            //     `Invalid function call in message. Expected a function call object`
-            //   );
-            // }
-            console.log("Calling ", name, "with", args);
-            onFunctionCall[name]?.(args);
+            onFunctionCall[function_name]?.(args);
           }
         },
         onFinal() {
+          console.log("Calling onFinal");
           if (hasFunction) return;
           onTextContent(text, true);
         },

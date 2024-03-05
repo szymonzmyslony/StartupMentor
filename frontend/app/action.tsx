@@ -1,6 +1,11 @@
 import "server-only";
 
-import { createAI, createStreamableUI, getMutableAIState } from "ai/rsc";
+import {
+  createAI,
+  createStreamableUI,
+  getAIState,
+  getMutableAIState,
+} from "ai/rsc";
 import OpenAI from "openai";
 
 import {
@@ -19,8 +24,8 @@ import {
 } from "@/lib/utils";
 import { z } from "zod";
 import { StockSkeleton } from "@/components/llm-stocks/stock-skeleton";
-import { StocksSkeleton } from "@/components/llm-stocks/stocks-skeleton";
 import getSupabase from "@/lib/supabase";
+import { runOpenAiTextCompletion } from "@/lib/utils/textCall";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || "",
@@ -109,6 +114,12 @@ async function submitUserMessage(content: string) {
     <BotMessage className="items-center">{spinner}</BotMessage>
   );
 
+  const currentMessages = aiState.get().map((info: any) => ({
+    role: info.role,
+    content: info.content,
+    name: info.name,
+  }));
+
   const completion = runOpenAICompletion(openai, {
     model: "gpt-3.5-turbo",
     stream: true,
@@ -116,17 +127,13 @@ async function submitUserMessage(content: string) {
       {
         role: "system",
         content: `\
-You are a startup mentor help users come up with their potential solutions to their problem.  
-You and the user can discuss their startup and background and you decide whether to ask them for more background or begin answering by fetching relevant startup advice based on the chat history and the user's queries.
-
-If you decide to fetch the query call \`match_chunks\` 
+You are a startup mentor help users come up with their potential solutions to their problem.
+If it is not startup related question, do not answer and guide the user to startups. 
+Generate a set of diverse quries and call  \`match_chunks\` to fetch from the startup mentors database.
+Always call match_chunks unless you are probing for more context.
 `,
       },
-      ...aiState.get().map((info: any) => ({
-        role: info.role,
-        content: info.content,
-        name: info.name,
-      })),
+      ...currentMessages,
     ],
     functions: [
       {
@@ -148,38 +155,41 @@ If you decide to fetch the query call \`match_chunks\`
   completion.onTextContent((content: string, isFinal: boolean) => {
     reply.update(<BotMessage>{content}</BotMessage>);
     if (isFinal) {
-      console.log("content is", content);
-
       reply.done();
       aiState.done([...aiState.get(), { role: "assistant", content }]);
     }
   });
 
   completion.onFunctionCall("match_chunks", async ({ queries }) => {
-    const result = await getSupabase().matchChunks(queries);
-    console.log("result is", result);
-    reply.update(
-      <BotCard>
-        <StockSkeleton />
-      </BotCard>
-    );
+    const content = await getSupabase().matchChunks(queries);
 
-    await sleep(1000);
+    // get all but last messages
+    const previousMessages = currentMessages.slice(0, -1);
+    const lastMessage = currentMessages[currentMessages.length - 1];
+    const finalMessage = {
+      ...lastMessage,
+      content: `Answer the following question using only the context provided. Question: ${lastMessage.content}. Context: ${content}`,
+    };
 
-    reply.done(
-      <BotCard>
-        <Stock name={queries[0]} />
-      </BotCard>
-    );
+    const final_messages = [...previousMessages, finalMessage];
+    console.log("final_messages", final_messages);
 
-    aiState.done([
-      ...aiState.get(),
-      {
-        role: "function",
-        name: "match_chunks",
-        content: `Price of`,
-      },
-    ]);
+    const second_completion = runOpenAiTextCompletion(openai, {
+      model: "gpt-3.5-turbo",
+      stream: true,
+      messages: final_messages,
+      temperature: 0,
+    });
+
+    second_completion.onTextContent((content: string, isFinal: boolean) => {
+      reply.update(<BotMessage>{content}</BotMessage>);
+      if (isFinal) {
+        reply.done();
+        aiState.done([...aiState.get(), { role: "assistant", content }]);
+      }
+    });
+
+    reply.update(<BotMessage>Fetching {queries}</BotMessage>);
   });
 
   return {

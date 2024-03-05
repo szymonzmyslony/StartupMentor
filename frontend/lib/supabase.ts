@@ -27,7 +27,11 @@ class Supabase {
       });
 
       if (error) throw new Error(error.message);
-      return data;
+      const key_points = data
+        ?.map((chunk) => chunk.chunk_key_points)
+        .join("\n");
+
+      return key_points;
     } catch (error) {
       console.error("Error in matchChunk:", error);
       throw error;
