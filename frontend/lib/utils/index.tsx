@@ -64,8 +64,6 @@ export function runOpenAICompletion<
       stream: true,
     });
 
-    let finalMessages: (ChatCompletionMessageParam | CreateMessage)[] = [];
-
     consumeStream(
       OpenAIStream(response, {
         onToken: (token) => {
@@ -74,10 +72,7 @@ export function runOpenAICompletion<
 
           onTextContent(text, false);
         },
-        experimental_onToolCall: async (
-          tools: ToolCallPayload,
-          appendToolCallMessage
-        ) => {
+        experimental_onToolCall: async (tools: ToolCallPayload) => {
           hasFunction = true;
           const toolCallPayload = tools.tools;
           for (const tool of toolCallPayload) {
@@ -91,7 +86,6 @@ export function runOpenAICompletion<
           }
         },
         onFinal() {
-          console.log("Calling onFinal");
           if (hasFunction) return;
           onTextContent(text, true);
         },
