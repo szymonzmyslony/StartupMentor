@@ -6,39 +6,39 @@ class Supabase {
   client: SupabaseClient<Database>;
   constructor() {
     // @ts-ignore
-    const supabaseUrl: string = process.env.SUPABASE_URL;
+    const supabaseUrl: string = process.env.NEXT_PUBLIC_SUPABASE_URL;
     // @ts-ignore
-    const supabaseAnonKey: string = process.env.SUPABASE_KEY;
+    const supabaseAnonKey: string = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     this.client = createClient<Database>(supabaseUrl, supabaseAnonKey);
   }
 
-  // // Match chunks based on query embedding
-  // matchChunks = async (queries: Array<string>, topK = 5) => {
-  //   const embeddings = await getEmbedding(queries);
-  //   const queryEmbeddings = embeddings.map((embedding) =>
-  //     JSON.stringify(embedding.embedding)
-  //   );
+  // Match chunks based on query embedding
+  matchChunks = async (queries: Array<string>, topK = 5) => {
+    const embeddings = await getEmbedding(queries);
+    const queryEmbeddings = embeddings.map((embedding) =>
+      JSON.stringify(embedding.embedding)
+    );
 
-  //   try {
-  //     const { data, error } = await this.client.rpc("match_multiple_chunks", {
-  //       query_embeddings: queryEmbeddings,
-  //       top_k: topK,
-  //       match_threshold: 0.0,
-  //     });
+    try {
+      const { data, error } = await this.client.rpc("match_multiple_chunks", {
+        query_embeddings: queryEmbeddings,
+        top_k: topK,
+        match_threshold: 0.0,
+      });
 
-  //     if (error) throw new Error(error.message);
-  //     const key_points = data
-  //       ?.map((chunk) => chunk.chunk_key_points)
-  //       .join("\n");
+      if (error) throw new Error(error.message);
+      const key_points = data
+        ?.map((chunk) => chunk.chunk_key_points)
+        .join("\n");
 
-  //     return key_points;
-  //   } catch (error) {
-  //     console.error("Error in matchChunk:", error);
-  //     throw error;
-  //   }
-  // };
+      return key_points;
+    } catch (error) {
+      console.error("Error in matchChunk:", error);
+      throw error;
+    }
+  };
 
-  // // Match chunks within a specific document based on query embedding
+  // Match chunks within a specific document based on query embedding
   // matchChunkWithinDocument = async (
   //   documentId: number,
   //   queryEmbedding: Array<number>,
@@ -64,7 +64,7 @@ class Supabase {
   //   }
   // };
 
-  // // Match documents based on query embedding
+  // Match documents based on query embedding
   // matchDocument = async (
   //   queryEmbedding: Array<number>,
   //   topK = 10,
